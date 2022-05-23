@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIAPRSoftware", "APIAPRSoftware.csproj", "{20C78A19-D793-4F5D-B8C0-CEFA57A6491A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIAPRSoftware", "APIAPRSoftware.csproj", "{20C78A19-D793-4F5D-B8C0-CEFA57A6491A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Client", "01.Client", "{61118C0F-922C-4AD3-A4A2-914B3F7157A7}"
 EndProject
@@ -21,19 +21,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07.SimpleAPI", "07.SimpleAP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08.Common", "08.Common", "{728C5D8F-7B27-469A-8D18-D4618957635F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "..\Models\Models.csproj", "{5CA34622-C255-495F-8B92-ED8725F1BBD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "..\Models\Models.csproj", "{5CA34622-C255-495F-8B92-ED8725F1BBD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "..\Services\Services.csproj", "{B0A87824-F502-4BF1-8766-B696457DE9BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "..\Services\Services.csproj", "{B0A87824-F502-4BF1-8766-B696457DE9BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWorkInterface", "..\UnitOfWorkInterface\UnitOfWorkInterface.csproj", "{8AC08AD5-72D9-4AB9-8E1D-446367A92A68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitOfWorkInterface", "..\UnitOfWorkInterface\UnitOfWorkInterface.csproj", "{8AC08AD5-72D9-4AB9-8E1D-446367A92A68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWorkSqlServer", "..\UnitOfWorkSqlServer\UnitOfWorkSqlServer.csproj", "{56F027A6-57BB-4BFB-A4AC-2B6758EA6A4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitOfWorkSqlServer", "..\UnitOfWorkSqlServer\UnitOfWorkSqlServer.csproj", "{56F027A6-57BB-4BFB-A4AC-2B6758EA6A4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryInterface", "..\RepositoryInterface\RepositoryInterface.csproj", "{1C2CA2C6-A259-436F-B3E7-6C7424E2332E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryInterface", "..\RepositoryInterface\RepositoryInterface.csproj", "{1C2CA2C6-A259-436F-B3E7-6C7424E2332E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositorySqlServer", "..\RepositorySqlServer\RepositorySqlServer.csproj", "{3422B1EC-35C0-4C3E-859B-CCB9368C2729}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositorySqlServer", "..\RepositorySqlServer\RepositorySqlServer.csproj", "{3422B1EC-35C0-4C3E-859B-CCB9368C2729}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\Common\Common.csproj", "{22BC7258-CAD9-4886-98BE-F618D1B1653B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "..\Common\Common.csproj", "{22BC7258-CAD9-4886-98BE-F618D1B1653B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "..\UnitTest\UnitTest.csproj", "{356901F1-0CFD-4646-8FBB-7EE4EA191950}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,10 @@ Global
 		{22BC7258-CAD9-4886-98BE-F618D1B1653B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22BC7258-CAD9-4886-98BE-F618D1B1653B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22BC7258-CAD9-4886-98BE-F618D1B1653B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{356901F1-0CFD-4646-8FBB-7EE4EA191950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{356901F1-0CFD-4646-8FBB-7EE4EA191950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{356901F1-0CFD-4646-8FBB-7EE4EA191950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{356901F1-0CFD-4646-8FBB-7EE4EA191950}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +92,7 @@ Global
 		{1C2CA2C6-A259-436F-B3E7-6C7424E2332E} = {5686C787-5CCF-473A-932E-508DBD48364A}
 		{3422B1EC-35C0-4C3E-859B-CCB9368C2729} = {5686C787-5CCF-473A-932E-508DBD48364A}
 		{22BC7258-CAD9-4886-98BE-F618D1B1653B} = {728C5D8F-7B27-469A-8D18-D4618957635F}
+		{356901F1-0CFD-4646-8FBB-7EE4EA191950} = {63A864D3-BB07-44F6-93F8-74A867D7B359}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AE25BB41-7713-4C23-8C56-ECB6DF832051}
