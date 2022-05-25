@@ -18,7 +18,6 @@ namespace UnitOfWorkSqlServer
             string CadenaDesencriptada = Encriptacion.DesEncriptar(File.ReadAllText(Rutas.RutaBaseCarpetas + "\\configuracion.json"));
             List<CadenaConexion> cnEntity = JsonConvert.DeserializeObject<List<CadenaConexion>>(CadenaDesencriptada);
             string cnString = string.Empty;
-            cnEntity[0].NombreBd = "aprsoftware";
             if (cnEntity[0].Web == "no")
             {
                 cnString = "Data source=" + cnEntity[0].NombreServidor +
