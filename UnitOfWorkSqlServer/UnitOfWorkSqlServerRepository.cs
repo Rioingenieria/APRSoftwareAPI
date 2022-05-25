@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RepositoryInterface.Usuarios;
+using RepositorySqlServer.Usuarios;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -41,6 +43,7 @@ namespace UnitOfWorkSqlServer
         //public IClienteOtroRepository ClienteOtroRepository { get; }
         //public IRegistroRepository RegistroRepository { get; }
         //public IConfiguracionIndividualRepository ConfiguracionIndividualRepository { get; }
+        public IUsuarioRepository UsuarioRepository { get; }
         public UnitOfWorkSqlServerRepository(SqlConnection context, SqlTransaction transaction)
         {
             //EgresoCategoriaRepository = new EgresoCategoriaRepository(context, transaction);
@@ -74,6 +77,7 @@ namespace UnitOfWorkSqlServer
             //ClienteOtroRepository = new ClienteOtroRepository(context, transaction);
             //RegistroRepository = new RegistroRepository(context, transaction);
             //ConfiguracionIndividualRepository = new ConfiguracionIndividualRepository(context, transaction);
+            UsuarioRepository = new UsuarioRepository(context, transaction);
         }
     }
 }

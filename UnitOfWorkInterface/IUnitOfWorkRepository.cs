@@ -1,5 +1,7 @@
-﻿using System;
+﻿using RepositoryInterface.Usuarios;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,5 +41,6 @@ namespace UnitOfWorkInterface
         //IClienteOtroRepository ClienteOtroRepository { get; }
         //IRegistroRepository RegistroRepository { get; }
         //IConfiguracionIndividualRepository ConfiguracionIndividualRepository { get; }
+        IUsuarioRepository UsuarioRepository { get; }
     }
 }
