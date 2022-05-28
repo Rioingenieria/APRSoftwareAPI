@@ -9,5 +9,9 @@
   <ItemGroup>
     <ProjectReference Include="..\RepositoryInterface\RepositoryInterface.csproj" />
   </ItemGroup>
-
+	<ItemGroup>
+		<Folder Include="Ingresos\" />
+		<Folder Include="Egresos\" />
+		<Folder Include="DTEs\" />
+	</ItemGroup>
 </Project>
