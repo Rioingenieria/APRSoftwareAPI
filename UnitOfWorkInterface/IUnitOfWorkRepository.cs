@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RepositoryInterface.ConfiguracionesGlobales;
+using RepositoryInterface.ConfiguracionesPeriodicosNew;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,8 @@ namespace UnitOfWorkInterface
 {
     public interface IUnitOfWorkRepository
     {
+        IConfiguracionGlobalRepository ConfiguracionGlobalRepository { get; }
+        IConfiguracionPeriodicoNewRepository ConfiguracionPeriodicoNewRepository { get; }
         //IEgresoCategoriaRepository EgresoCategoriaRepository { get; }
         //IEgresoSubCategoriaRepository EgresoSubCategoriaRepository { get; }
         //ISucursalesRepository SucursalesRepository { get; }

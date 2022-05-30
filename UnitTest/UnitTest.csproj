@@ -14,4 +14,10 @@
     <PackageReference Include="coverlet.collector" Version="3.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
+    <ProjectReference Include="..\UnitOfWorkSqlServer\UnitOfWorkSqlServer.csproj" />
+  </ItemGroup>
+
 </Project>
