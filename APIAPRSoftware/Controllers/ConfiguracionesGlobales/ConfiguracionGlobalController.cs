@@ -15,28 +15,28 @@ namespace APIAPRSoftware.Controllers.ConfiguracionesGlobales
             unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             configuracion = new ConfiguracionGlobalServices(unitOfWork);
         }
-        [HttpGet]
+        [HttpGet("~/api/ConfiguracionGlobal/getAll")]
         public ActionResult<List<ConfiguracionGlobal>> GetAll()
         {
             List<ConfiguracionGlobal> list = new List<ConfiguracionGlobal>();
             list = configuracion.GetAll(Models.Enum.GetAll.GetAllEnum.Todos);
             return list;
         }
-        [HttpGet]
+        [HttpGet("~/api/ConfiguracionGlobal/getEliminados")]
         public ActionResult<List<ConfiguracionGlobal>> GetEliminados()
         {
             List<ConfiguracionGlobal> list = new List<ConfiguracionGlobal>();
             list = configuracion.GetAll(Models.Enum.GetAll.GetAllEnum.Eliminados);
             return list;
         }
-        [HttpGet]
+        [HttpGet("~/api/ConfiguracionGlobal/getNoEliminados")]
         public ActionResult<List<ConfiguracionGlobal>> GetNoEliminados()
         {
             List<ConfiguracionGlobal> list = new List<ConfiguracionGlobal>();
             list = configuracion.GetAll(Models.Enum.GetAll.GetAllEnum.NoEliminados);
             return list;
         }
-        [HttpGet("{_idConfig:int}")]
+        [HttpGet("~/api/ConfiguracionGlobal/getById/{_idConfig:int}")]
         public ActionResult<ConfiguracionGlobal> GetById(int _idConfig)
         {
             var config = new ConfiguracionGlobal();
