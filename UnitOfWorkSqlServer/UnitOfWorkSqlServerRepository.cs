@@ -1,5 +1,11 @@
-﻿using RepositoryInterface.Usuarios;
+
+using RepositoryInterface.Usuarios;
 using RepositorySqlServer.Usuarios;
+using Models.ConfiguracionesGlobales;
+using RepositoryInterface.ConfiguracionesGlobales;
+using RepositoryInterface.ConfiguracionesPeriodicosNew;
+using RepositorySqlServer.ConfiguracionesGlobales;
+using RepositorySqlServer.ConfiguracionesPeriodicasNew;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -12,6 +18,10 @@ namespace UnitOfWorkSqlServer
 {
     public class UnitOfWorkSqlServerRepository : IUnitOfWorkRepository
     {
+        public IConfiguracionGlobalRepository ConfiguracionGlobalRepository { get; set; }
+
+        public IConfiguracionPeriodicoNewRepository ConfiguracionPeriodicoNewRepository { get; set; }
+
         //public IEgresoCategoriaRepository EgresoCategoriaRepository { get; set; }
         //public IEgresoSubCategoriaRepository EgresoSubCategoriaRepository { get; set; }
         //public ISucursalesRepository SucursalesRepository { get; set; }
@@ -43,9 +53,14 @@ namespace UnitOfWorkSqlServer
         //public IClienteOtroRepository ClienteOtroRepository { get; }
         //public IRegistroRepository RegistroRepository { get; }
         //public IConfiguracionIndividualRepository ConfiguracionIndividualRepository { get; }
+
         public IUsuarioRepository UsuarioRepository { get; }
+
+
         public UnitOfWorkSqlServerRepository(SqlConnection context, SqlTransaction transaction)
         {
+            ConfiguracionGlobalRepository = new ConfiguracionGlobalRepository(context, transaction);
+            ConfiguracionPeriodicoNewRepository = new ConfiguracionPeriodicoNewRepository(context, transaction);
             //EgresoCategoriaRepository = new EgresoCategoriaRepository(context, transaction);
             //EgresoSubCategoriaRepository = new EgresoSubCategoriaRepository(context, transaction);
             //SucursalesRepository = new SucursalesRepository(context, transaction);

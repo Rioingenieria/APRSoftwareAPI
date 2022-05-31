@@ -1,4 +1,6 @@
-﻿using RepositoryInterface.Usuarios;
+using RepositoryInterface.Usuarios;
+using RepositoryInterface.ConfiguracionesGlobales;
+using RepositoryInterface.ConfiguracionesPeriodicosNew;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -10,6 +12,8 @@ namespace UnitOfWorkInterface
 {
     public interface IUnitOfWorkRepository
     {
+        IConfiguracionGlobalRepository ConfiguracionGlobalRepository { get; }
+        IConfiguracionPeriodicoNewRepository ConfiguracionPeriodicoNewRepository { get; }
         //IEgresoCategoriaRepository EgresoCategoriaRepository { get; }
         //IEgresoSubCategoriaRepository EgresoSubCategoriaRepository { get; }
         //ISucursalesRepository SucursalesRepository { get; }
