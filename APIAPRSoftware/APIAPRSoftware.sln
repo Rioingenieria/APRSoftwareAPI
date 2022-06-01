@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositorySqlServer", "..\R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "..\Common\Common.csproj", "{22BC7258-CAD9-4886-98BE-F618D1B1653B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "..\UnitTest\UnitTest.csproj", "{356901F1-0CFD-4646-8FBB-7EE4EA191950}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest", "..\UnitTest\UnitTest.csproj", "{356901F1-0CFD-4646-8FBB-7EE4EA191950}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

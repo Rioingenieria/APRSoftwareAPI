@@ -13,9 +13,14 @@
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
+
 	<ItemGroup>
+		<Folder Include="ConfiguracionesFacturaciones\" />	
 		<Folder Include="DTEs\" />
 		<Folder Include="Egresos\" />
 		<Folder Include="Ingresos\" />
+		<Folder Include="Inventory\" />
+		<Folder Include="Usuarios\" />		
 	</ItemGroup>
+
 </Project>

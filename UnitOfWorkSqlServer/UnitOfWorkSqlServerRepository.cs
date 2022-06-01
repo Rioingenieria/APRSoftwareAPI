@@ -1,11 +1,12 @@
-
-using RepositoryInterface.Usuarios;
-using RepositorySqlServer.Usuarios;
 using Models.ConfiguracionesGlobales;
+using RepositoryInterface.ConfiguracionesFacturaciones;
 using RepositoryInterface.ConfiguracionesGlobales;
 using RepositoryInterface.ConfiguracionesPeriodicosNew;
+using RepositorySqlServer.ConfiguracionesFacturaciones;
 using RepositorySqlServer.ConfiguracionesGlobales;
 using RepositorySqlServer.ConfiguracionesPeriodicasNew;
+using RepositoryInterface.Usuarios;
+using RepositorySqlServer.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -54,6 +55,8 @@ namespace UnitOfWorkSqlServer
         //public IRegistroRepository RegistroRepository { get; }
         //public IConfiguracionIndividualRepository ConfiguracionIndividualRepository { get; }
 
+        public IConfiguracionFacturacionRepository ConfiguracionFacturacionRepository { get;} 
+
         public IUsuarioRepository UsuarioRepository { get; }
 
 
@@ -92,6 +95,7 @@ namespace UnitOfWorkSqlServer
             //ClienteOtroRepository = new ClienteOtroRepository(context, transaction);
             //RegistroRepository = new RegistroRepository(context, transaction);
             //ConfiguracionIndividualRepository = new ConfiguracionIndividualRepository(context, transaction);
+            ConfiguracionFacturacionRepository = new ConfiguracionFacturacionRepository(context, transaction);
             UsuarioRepository = new UsuarioRepository(context, transaction);
         }
     }
