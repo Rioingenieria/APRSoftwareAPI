@@ -20,7 +20,6 @@ namespace UnitOfWorkSqlServer
     public class UnitOfWorkSqlServerRepository : IUnitOfWorkRepository
     {
         public IConfiguracionGlobalRepository ConfiguracionGlobalRepository { get; set; }
-
         public IConfiguracionPeriodicoNewRepository ConfiguracionPeriodicoNewRepository { get; set; }
 
         //public IEgresoCategoriaRepository EgresoCategoriaRepository { get; set; }
@@ -54,12 +53,8 @@ namespace UnitOfWorkSqlServer
         //public IClienteOtroRepository ClienteOtroRepository { get; }
         //public IRegistroRepository RegistroRepository { get; }
         //public IConfiguracionIndividualRepository ConfiguracionIndividualRepository { get; }
-
         public IConfiguracionFacturacionRepository ConfiguracionFacturacionRepository { get;} 
-
         public IUsuarioRepository UsuarioRepository { get; }
-
-
         public UnitOfWorkSqlServerRepository(SqlConnection context, SqlTransaction transaction)
         {
             ConfiguracionGlobalRepository = new ConfiguracionGlobalRepository(context, transaction);
@@ -95,7 +90,7 @@ namespace UnitOfWorkSqlServer
             //ClienteOtroRepository = new ClienteOtroRepository(context, transaction);
             //RegistroRepository = new RegistroRepository(context, transaction);
             //ConfiguracionIndividualRepository = new ConfiguracionIndividualRepository(context, transaction);
-            ConfiguracionFacturacionRepository = new ConfiguracionFacturacionRepository(context, transaction);
+            ConfiguracionFacturacionRepository = new ConfiguracionFacturacionRepository(context, transaction);   
             UsuarioRepository = new UsuarioRepository(context, transaction);
         }
     }

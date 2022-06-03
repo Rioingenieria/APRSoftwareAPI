@@ -19,7 +19,6 @@
 		<Folder Include="DTEs\" />
 		<Folder Include="Egresos\" />
 		<Folder Include="Ingresos\" />
-		<Folder Include="Inventory\" />
 		<Folder Include="Usuarios\" />		
 	</ItemGroup>
 

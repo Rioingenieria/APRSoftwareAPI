@@ -13,7 +13,6 @@
 
 	<ItemGroup>
 		<Folder Include="ConfiguracionesFacturaciones\" />
-		<Folder Include="Inventory\" />
 		<Folder Include="Usuarios\" />		
 	</ItemGroup>	
 </Project>
