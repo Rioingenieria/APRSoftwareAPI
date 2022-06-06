@@ -14,6 +14,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnitOfWorkInterface;
+using RepositoryInterface.ProductosNew;
+using RepositorySqlServer.ProductosNew;
 
 namespace UnitOfWorkSqlServer
 {
@@ -55,10 +57,13 @@ namespace UnitOfWorkSqlServer
         //public IConfiguracionIndividualRepository ConfiguracionIndividualRepository { get; }
         public IConfiguracionFacturacionRepository ConfiguracionFacturacionRepository { get;} 
         public IUsuarioRepository UsuarioRepository { get; }
+        public IProductoNewRepository ProductoNewRepository { get; }
+        
         public UnitOfWorkSqlServerRepository(SqlConnection context, SqlTransaction transaction)
         {
             ConfiguracionGlobalRepository = new ConfiguracionGlobalRepository(context, transaction);
             ConfiguracionPeriodicoNewRepository = new ConfiguracionPeriodicoNewRepository(context, transaction);
+            ProductoNewRepository = new ProductoNewRepository(context, transaction);
             //EgresoCategoriaRepository = new EgresoCategoriaRepository(context, transaction);
             //EgresoSubCategoriaRepository = new EgresoSubCategoriaRepository(context, transaction);
             //SucursalesRepository = new SucursalesRepository(context, transaction);
