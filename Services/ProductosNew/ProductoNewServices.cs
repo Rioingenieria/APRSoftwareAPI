@@ -66,14 +66,14 @@ namespace Services.ProductosNew
         /// <returns>Retorna un ProductoNew</returns>
         public ProductoNew GetById(int _idProduct)
         {
-            ProductoNew config = new ProductoNew();
+            ProductoNew producto = new ProductoNew();
             try
             {
                 using (var context = _uniOfWork.Create())
                 {
-                    config = context.Repository.ProductoNewRepository.GetById(_idProduct);
+                    producto = context.Repository.ProductoNewRepository.GetById(_idProduct);
                 }
-                return config;
+                return producto;
             }
             catch (Exception ex)
             {
@@ -272,6 +272,50 @@ namespace Services.ProductosNew
             {
                 SalidaLogs.AgregarLog(ex);
                 ValidationResult.Status = Models.Enum.Status.StatusEnum.Error;
+            }
+        }
+        /// <summary>
+        /// Verifica si existe el producto segun el codigo
+        /// </summary>
+        /// <param name="_codigo">codigo del producto</param>
+        /// <returns>retorna true si existe el producto</returns>
+        public Boolean IsExistCodigo(string _codigo)
+        {
+            try
+            {
+
+                using (var context = _uniOfWork.Create())
+                {
+                    return context.Repository.ProductoNewRepository.IsExistCodigo(_codigo);
+                }
+            }
+            catch (Exception ex)
+            {
+                SalidaLogs.AgregarLog(ex);
+                ValidationResult.Status = Models.Enum.Status.StatusEnum.Error;
+                return false;
+            }
+        }
+        /// <summary>
+        /// Obtiene una lista de todos los ProductoNew segun el codigo existentes en la BBDD
+        /// </summary>
+        /// <returns>Devuelve un objeto lista de tipo ProductoNew con todos sus Datos</returns>
+        public List<ProductoNew> GetbyCodigo(string _codigo)
+        {
+            try
+            {
+                List<ProductoNew> productList = new List<ProductoNew>();
+                using (var context = _uniOfWork.Create())
+                {
+                    productList = context.Repository.ProductoNewRepository.GetByCodigo(_codigo);
+                }
+                return productList;
+            }
+            catch (Exception ex)
+            {
+                SalidaLogs.AgregarLog(ex);
+                ValidationResult.Status = Models.Enum.Status.StatusEnum.Error;
+                return null;
             }
         }
     }

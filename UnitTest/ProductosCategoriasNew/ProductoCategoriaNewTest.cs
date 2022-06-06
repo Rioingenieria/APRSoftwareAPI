@@ -1,48 +1,38 @@
-﻿using NUnit.Framework;
-using Services.ProductosNew;
+﻿using Models.ProductosCategoriasNew;
+using NUnit.Framework;
+using Services.ProductosCategoriasNew;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnitTest.ProductoNew
+namespace UnitTest.ProductosCategoriasNew
 {
-    public class ProductoNewTest
+    public class ProductoCategoriaNewTest
     {
         private Models.Enum.Status.StatusEnum isCorrect;
-        private Models.ProductosNew.ProductoNew _producto;
+        ProductoCategoriaNew _productoCategoria;
         [SetUp]
         public void Setup()
-        { 
+        {
             isCorrect = Models.Enum.Status.StatusEnum.Ok;
-            _producto = new Models.ProductosNew.ProductoNew() 
-            {
-            id_producto=1,
+            _productoCategoria=new ProductoCategoriaNew() 
+            { 
+            id_producto_categoria=1,
             nombre="1",
             descripcion="1",
-            existencia=1,
-            precio=1,
-            codigo="1",
-            costo=1,
-            unidad_medida_estado=1,
-            id_usuario=1,
-            fecha_creacion=DateTime.Now,
             is_eliminado=false,
-            sku="1",
-            id_proveedor=5,
-            id_bodega=1,
-            id_categoria_producto=1,
-            id_estado_estado=1
+            id_usuario=1,
+            fecha_creacion=DateTime.Now
             };
-        
         }
-        [Test, Order (0)] 
-        public void Create() 
+        [Test,Order (0)]
+        public void Create()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            ProductoNewServices productoServices = new ProductoNewServices(unitOfWork);
-            productoServices.Create(_producto);
+            ProductoCategoriaNewServices productoServices = new ProductoCategoriaNewServices(unitOfWork);
+            productoServices.Create(_productoCategoria);
             Console.WriteLine(productoServices.ValidationResult.Message.ToString());
             Assert.AreEqual(isCorrect, productoServices.ValidationResult.Status);
         }
@@ -50,7 +40,7 @@ namespace UnitTest.ProductoNew
         public void GetAll()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            ProductoNewServices productoServices = new ProductoNewServices(unitOfWork);
+            ProductoCategoriaNewServices productoServices = new ProductoCategoriaNewServices(unitOfWork);
             var ListResult = productoServices.GetAll(Models.Enum.GetAll.GetAllEnum.Todos);
             Assert.IsNotEmpty(ListResult);
         }
@@ -58,7 +48,7 @@ namespace UnitTest.ProductoNew
         public void GetAllNoEliminados()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            ProductoNewServices productoServices = new ProductoNewServices(unitOfWork);
+            ProductoCategoriaNewServices productoServices = new ProductoCategoriaNewServices(unitOfWork);
             var ListResult = productoServices.GetAll(Models.Enum.GetAll.GetAllEnum.NoEliminados);
             Assert.IsNotEmpty(ListResult);
         }
@@ -66,32 +56,32 @@ namespace UnitTest.ProductoNew
         public void UpdateIsEliminado()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            ProductoNewServices productoServices = new ProductoNewServices(unitOfWork);
-            productoServices.UpdateIsEliminado(_producto.id_producto, true);
+            ProductoCategoriaNewServices productoServices = new ProductoCategoriaNewServices(unitOfWork);
+            productoServices.UpdateIsEliminado(_productoCategoria.id_producto_categoria, true);
             Assert.AreEqual(isCorrect, productoServices.ValidationResult.Status);
         }
         [Test, Order(4)]
         public void GetAllEliminados()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            ProductoNewServices productoServices = new ProductoNewServices(unitOfWork);
+            ProductoCategoriaNewServices productoServices = new ProductoCategoriaNewServices(unitOfWork);
             var ListResult = productoServices.GetAll(Models.Enum.GetAll.GetAllEnum.Eliminados);
             Assert.IsNotEmpty(ListResult);
         }
         [Test, Order(5)]
-        public void GetById() 
+        public void GetById()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            ProductoNewServices productoServices = new ProductoNewServices(unitOfWork);
+            ProductoCategoriaNewServices productoServices = new ProductoCategoriaNewServices(unitOfWork);
             var ListResult = productoServices.GetAll(Models.Enum.GetAll.GetAllEnum.NoEliminados);
             Assert.IsNotEmpty(ListResult);
         }
         [Test, Order(6)]
-        public void Update() 
+        public void Update()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            ProductoNewServices productoServices = new ProductoNewServices(unitOfWork);
-            productoServices.Update(_producto);
+            ProductoCategoriaNewServices productoServices = new ProductoCategoriaNewServices(unitOfWork);
+            productoServices.Update(_productoCategoria);
             Console.WriteLine(productoServices.ValidationResult.Message.ToString());
             Assert.AreEqual(isCorrect, productoServices.ValidationResult.Status);
         }
@@ -99,25 +89,9 @@ namespace UnitTest.ProductoNew
         public void Remove()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            ProductoNewServices productoServices = new ProductoNewServices(unitOfWork);
-            productoServices.Remove(_producto);
+            ProductoCategoriaNewServices productoServices = new ProductoCategoriaNewServices(unitOfWork);
+            productoServices.Remove(_productoCategoria);
             Assert.AreEqual(isCorrect, productoServices.ValidationResult.Status);
-        }
-        [Test,Order(8)]
-        public void IsExitsCodigo()
-        {
-            UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            ProductoNewServices productoServices = new ProductoNewServices(unitOfWork);
-            var result = productoServices.IsExistCodigo(_producto.codigo);
-            Assert.AreEqual(result, true);
-        }
-        [Test,Order(9)]
-        public void GetbyCodigo()
-        {
-            UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            ProductoNewServices productoServices = new ProductoNewServices(unitOfWork);
-            var ListResult = productoServices.GetbyCodigo(_producto.codigo);
-            Assert.IsNotEmpty(ListResult);
         }
     }
 }

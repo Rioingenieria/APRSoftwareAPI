@@ -77,7 +77,7 @@ namespace RepositorySqlServer.ProductosNew
             return listProducts;
         }
 
-        public List<ProductoNew> GetByCodigo(int codigo)
+        public List<ProductoNew> GetByCodigo(string codigo)
         {
             var cmd = CreateCommand("SELECT*FROM productos_new WHERE codigo=@codigo");
             cmd.Parameters.AddWithValue("@codigo", codigo);
@@ -120,7 +120,9 @@ namespace RepositorySqlServer.ProductosNew
             var cmd = CreateCommand("UPDATE productos_new SET nombre=@nombre,descripcion=descripcion," +
                 "existencia=@existencia,precio=@precio,costo=@costo,unidad_medida_estado=@unidad_medida_estado," +
                 "codigo=@codigo,id_usuario=@id_usuario,fecha_creacion=@fecha_creacion,is_eliminado=@is_eliminado,sku=@sku" +
-                ",id_proveedor=@id_proveedor,id_bodega=@id_bodega,id_categoria_producto=@id_categoria_producto,id_estado_estado=@id_estado_estado");
+                ",id_proveedor=@id_proveedor,id_bodega=@id_bodega,id_categoria_producto=@id_categoria_producto,id_estado_estado=@id_estado_estado " +
+                "WHERE id_producto=@id_producto");
+            cmd.Parameters.AddWithValue("@id_producto", t.id_producto);
             cmd.Parameters.AddWithValue("@nombre", t.nombre);
             cmd.Parameters.AddWithValue("@descripcion", t.descripcion);
             cmd.Parameters.AddWithValue("@existencia", t.existencia);

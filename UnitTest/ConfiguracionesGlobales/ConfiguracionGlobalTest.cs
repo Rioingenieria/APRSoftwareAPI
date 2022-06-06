@@ -17,7 +17,7 @@ namespace UnitTest.ConfiguracionesGlobales
             isCorrect = Models.Enum.Status.StatusEnum.Ok;
             ConfigGlobal = new ConfiguracionGlobal()
             {
-                id_configuracion = 8,
+                id_configuracion = 7,
                 web = true,
                 is_eliminado = false,
                 id_usuario = 1,

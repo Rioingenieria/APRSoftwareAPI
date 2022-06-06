@@ -16,6 +16,8 @@ using System.Threading.Tasks;
 using UnitOfWorkInterface;
 using RepositoryInterface.ProductosNew;
 using RepositorySqlServer.ProductosNew;
+using RepositoryInterface.ProductosCategoriaNew;
+using RepositorySqlServer.ProductosCategoriasNew;
 
 namespace UnitOfWorkSqlServer
 {
@@ -58,12 +60,15 @@ namespace UnitOfWorkSqlServer
         public IConfiguracionFacturacionRepository ConfiguracionFacturacionRepository { get;} 
         public IUsuarioRepository UsuarioRepository { get; }
         public IProductoNewRepository ProductoNewRepository { get; }
-        
+
+        public IProductoCategoriaNewRepository ProductoCategoriaNewRepository { get; }
+
         public UnitOfWorkSqlServerRepository(SqlConnection context, SqlTransaction transaction)
         {
             ConfiguracionGlobalRepository = new ConfiguracionGlobalRepository(context, transaction);
             ConfiguracionPeriodicoNewRepository = new ConfiguracionPeriodicoNewRepository(context, transaction);
             ProductoNewRepository = new ProductoNewRepository(context, transaction);
+            ProductoCategoriaNewRepository=new ProductoCategoriaNewRepository(context,transaction);
             //EgresoCategoriaRepository = new EgresoCategoriaRepository(context, transaction);
             //EgresoSubCategoriaRepository = new EgresoSubCategoriaRepository(context, transaction);
             //SucursalesRepository = new SucursalesRepository(context, transaction);

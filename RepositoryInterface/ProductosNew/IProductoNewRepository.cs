@@ -12,6 +12,6 @@ namespace RepositoryInterface.ProductosNew
         IRemoveRepository<int>,ICreateEntityRepository<ProductoNew>,IReadRepository<ProductoNew,int>
     {
         Boolean IsExistCodigo(string codigo);
-        List<ProductoNew> GetByCodigo(int codigo);
+        List<ProductoNew> GetByCodigo(string codigo);
     }
 }

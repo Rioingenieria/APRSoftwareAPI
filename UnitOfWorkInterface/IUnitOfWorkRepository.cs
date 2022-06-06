@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RepositoryInterface.ProductosNew;
+using RepositoryInterface.ProductosCategoriaNew;
 
 namespace UnitOfWorkInterface
 {
@@ -18,6 +19,7 @@ namespace UnitOfWorkInterface
         IConfiguracionGlobalRepository ConfiguracionGlobalRepository { get; }
         IConfiguracionPeriodicoNewRepository ConfiguracionPeriodicoNewRepository { get; }
         IProductoNewRepository ProductoNewRepository { get; }
+        IProductoCategoriaNewRepository  ProductoCategoriaNewRepository { get; }
         //IEgresoCategoriaRepository EgresoCategoriaRepository { get; }
         //IEgresoSubCategoriaRepository EgresoSubCategoriaRepository { get; }
         //ISucursalesRepository SucursalesRepository { get; }

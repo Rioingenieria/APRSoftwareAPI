@@ -13,6 +13,7 @@
 
 	<ItemGroup>
 		<Folder Include="ConfiguracionesFacturaciones\" />
+		<Folder Include="ProductosCategoriasNew\" />
 		<Folder Include="Usuarios\" />		
 	</ItemGroup>	
 </Project>
