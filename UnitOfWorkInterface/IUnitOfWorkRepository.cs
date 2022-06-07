@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RepositoryInterface.ProductosNew;
 using RepositoryInterface.ProductosCategoriaNew;
+using RepositoryInterface.ProveedoresNew;
 
 namespace UnitOfWorkInterface
 {
@@ -20,6 +21,7 @@ namespace UnitOfWorkInterface
         IConfiguracionPeriodicoNewRepository ConfiguracionPeriodicoNewRepository { get; }
         IProductoNewRepository ProductoNewRepository { get; }
         IProductoCategoriaNewRepository  ProductoCategoriaNewRepository { get; }
+        IProveedorNewRepository  ProveedorNewRepository { get; }
         //IEgresoCategoriaRepository EgresoCategoriaRepository { get; }
         //IEgresoSubCategoriaRepository EgresoSubCategoriaRepository { get; }
         //ISucursalesRepository SucursalesRepository { get; }
