@@ -17,7 +17,7 @@ namespace UnitTest.ConfiguracionesGlobales
             isCorrect = Models.Enum.Status.StatusEnum.Ok;
             ConfigGlobal = new ConfiguracionGlobal()
             {
-                id_configuracion = 7,
+                id_configuracion = 1,
                 web = true,
                 is_eliminado = false,
                 id_usuario = 1,
@@ -72,7 +72,7 @@ namespace UnitTest.ConfiguracionesGlobales
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             ConfiguracionGlobalServices config = new ConfiguracionGlobalServices(unitOfWork);
-            var Result = config.GetById(5);
+            var Result = config.GetById(ConfigGlobal.id_configuracion);
             Assert.IsNotNull(Result);
         }
         [Test]

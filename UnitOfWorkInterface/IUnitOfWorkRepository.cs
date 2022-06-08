@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using RepositoryInterface.ProductosNew;
 using RepositoryInterface.ProductosCategoriaNew;
 using RepositoryInterface.ProveedoresNew;
+using RepositoryInterface.DatosFacturacionNew;
 
 namespace UnitOfWorkInterface
 {
@@ -22,6 +23,7 @@ namespace UnitOfWorkInterface
         IProductoNewRepository ProductoNewRepository { get; }
         IProductoCategoriaNewRepository  ProductoCategoriaNewRepository { get; }
         IProveedorNewRepository  ProveedorNewRepository { get; }
+        IDatoFacturacionNewRepository DatoFacturacionNewRepository { get; }
         //IEgresoCategoriaRepository EgresoCategoriaRepository { get; }
         //IEgresoSubCategoriaRepository EgresoSubCategoriaRepository { get; }
         //ISucursalesRepository SucursalesRepository { get; }
@@ -32,7 +34,6 @@ namespace UnitOfWorkInterface
         //ICambioSaldoInicialRepository CambioSaldoInicialRepository { get; }
         //ILecturaIngresoRepository LecturaIngresoRepository { get; }
         //IClienteRepository ClienteRepository { get; }
-        //IDatosFacturacionRepository DatosFacturacionRepository { get; }
         //IMedidorRepository MedidorRepository { get; }
         //ISubsidioRepository SubsidioRepository { get; }
         //IReferenciasDTERepository ReferenciasDTERepository { get; }

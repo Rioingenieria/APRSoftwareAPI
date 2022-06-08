@@ -20,6 +20,8 @@ using RepositoryInterface.ProductosCategoriaNew;
 using RepositorySqlServer.ProductosCategoriasNew;
 using RepositoryInterface.ProveedoresNew;
 using RepositorySqlServer.ProveedoresNew;
+using RepositoryInterface.DatosFacturacionNew;
+using RepositorySqlServer.DatosFacturacionNew;
 
 namespace UnitOfWorkSqlServer
 {
@@ -38,7 +40,6 @@ namespace UnitOfWorkSqlServer
         //public ICambioSaldoInicialRepository CambioSaldoInicialRepository { get; set; }
         //public ILecturaIngresoRepository LecturaIngresoRepository { get; set; }
         //public IClienteRepository ClienteRepository { get; set; }
-        //public IDatosFacturacionRepository DatosFacturacionRepository { get; }
         //public IMedidorRepository MedidorRepository { get; }
         //public ISubsidioRepository SubsidioRepository { get; }
         //public IReferenciasDTERepository ReferenciasDTERepository { get; }
@@ -67,6 +68,8 @@ namespace UnitOfWorkSqlServer
 
         public IProveedorNewRepository ProveedorNewRepository { get; }
 
+        public IDatoFacturacionNewRepository DatoFacturacionNewRepository { get; }
+
         public UnitOfWorkSqlServerRepository(SqlConnection context, SqlTransaction transaction)
         {
             ConfiguracionGlobalRepository = new ConfiguracionGlobalRepository(context, transaction);
@@ -74,6 +77,7 @@ namespace UnitOfWorkSqlServer
             ProductoNewRepository = new ProductoNewRepository(context, transaction);
             ProductoCategoriaNewRepository=new ProductoCategoriaNewRepository(context,transaction);
             ProveedorNewRepository = new ProveedorNewRepository(context, transaction);
+            DatoFacturacionNewRepository=new DatoFacturacionNewRepository(context, transaction);
             //EgresoCategoriaRepository = new EgresoCategoriaRepository(context, transaction);
             //EgresoSubCategoriaRepository = new EgresoSubCategoriaRepository(context, transaction);
             //SucursalesRepository = new SucursalesRepository(context, transaction);

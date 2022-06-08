@@ -18,7 +18,7 @@ namespace UnitTest.CongiguracionesPeriodicosNew
             isCorrect = Models.Enum.Status.StatusEnum.Ok;
             Config = new ConfiguracionPeriodicoNew()
             {
-                id_configuracion_periodico = 9,
+                id_configuracion_periodico = 1,
                admin_subsidio = true,
                 is_eliminado = false,
                 id_usuario = 1,
@@ -109,7 +109,7 @@ namespace UnitTest.CongiguracionesPeriodicosNew
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             ConfiguracionPeriodicaNewServices config = new ConfiguracionPeriodicaNewServices(unitOfWork);
-            var Result = config.GetById(5);
+            var Result = config.GetById(Config.id_configuracion_periodico);
             Assert.IsNotNull(Result);
         }
         [Test]

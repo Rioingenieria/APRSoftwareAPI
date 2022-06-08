@@ -83,8 +83,8 @@ namespace UnitTest.ProductoNew
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             ProductoNewServices productoServices = new ProductoNewServices(unitOfWork);
-            var ListResult = productoServices.GetAll(Models.Enum.GetAll.GetAllEnum.NoEliminados);
-            Assert.IsNotEmpty(ListResult);
+            var ListResult = productoServices.GetById(_producto.id_producto);
+            Assert.IsNotNull(ListResult);
         }
         [Test, Order(6)]
         public void Update() 

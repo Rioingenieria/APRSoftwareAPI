@@ -56,7 +56,7 @@ namespace RepositorySqlServer.ProductosCategoriasNew
 
         public ProductoCategoriaNew GetById(int id)
         {
-            var cmd = CreateCommand("SELECT*FROM productos_new WHERE id_producto_categoria=@id");
+            var cmd = CreateCommand("SELECT*FROM productos_categorias_new WHERE id_producto_categoria=@id");
             cmd.Parameters.AddWithValue("@id", id);
             var producto = new ProductoCategoriaNew();
             using (var reader = cmd.ExecuteReader()) { reader.Read(); return producto = CreateEntity(reader); }
