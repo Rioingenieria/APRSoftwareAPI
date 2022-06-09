@@ -67,7 +67,7 @@ namespace RepositorySqlServer.ConfiguracionesPeriodicasNew
             cmd.Parameters.AddWithValue("@envio_whatsapp", t.envio_whatsapp);
             cmd.Parameters.AddWithValue("@fecha_creacion", t.fecha_creacion);
             cmd.Parameters.AddWithValue("@id_usuario", t.id_usuario);
-            cmd.Parameters.AddWithValue("@is_eliminado", t.is_eliminado);
+            cmd.Parameters.AddWithValue("@is_eliminado", false);
             return cmd.ExecuteNonQuery();
         }
 
@@ -158,8 +158,8 @@ namespace RepositorySqlServer.ConfiguracionesPeriodicasNew
                 "carpeta_megasync=@carpeta_megasync,subsidio_solo_agua=@subsidio_solo_agua,usuario_megasync=@usuario_megasync," +
                 "password_megasync=@password_megasync," +
                 "contar_clientes_subsidio_0=@contar_clientes_subsidio_0,inicio_tarifa_verano=@inicio_tarifa_verano,fin_tarifa_verano=@fin_tarifa_verano,color_principal=@color_principal," +
-                "color_secundario=@color_secundario,envio_whatsapp=@envio_whatsapp,fecha_creacion=@fecha_creacion,id_usuario=@id_usuario, is_eliminado=@is_eliminado " +
-                "WHERE id_configuracion_periodico=@id_configuracion_periodico");
+                "color_secundario=@color_secundario,envio_whatsapp=@envio_whatsapp,fecha_creacion=@fecha_creacion,id_usuario=@id_usuario " +
+                "WHERE id_configuracion_periodico=@id_configuracion_periodico,is_eliminado=@is_eliminado");
             cmd.Parameters.AddWithValue("@id_configuracion_periodico", t.id_configuracion_periodico);
             cmd.Parameters.AddWithValue("@años_subsidio", t.años_subsidio);
             cmd.Parameters.AddWithValue("@meses_subsidio", t.meses_subsidio);
@@ -199,7 +199,7 @@ namespace RepositorySqlServer.ConfiguracionesPeriodicasNew
             cmd.Parameters.AddWithValue("@envio_whatsapp", t.envio_whatsapp);
             cmd.Parameters.AddWithValue("@fecha_creacion", t.fecha_creacion);
             cmd.Parameters.AddWithValue("@id_usuario", t.id_usuario);
-            cmd.Parameters.AddWithValue("@is_eliminado", t.is_eliminado);
+            cmd.Parameters.AddWithValue("@id_usuario", t.is_eliminado);
             return cmd.ExecuteNonQuery();
         }
 

@@ -23,7 +23,7 @@ namespace RepositorySqlServer.ProductosCategoriasNew
                 "(@nombre,@descripcion,@is_eliminado,@id_usuario,@fecha_creacion)");
             cmd.Parameters.AddWithValue("@nombre", t.nombre);
             cmd.Parameters.AddWithValue("@descripcion",t.descripcion);
-            cmd.Parameters.AddWithValue("@is_eliminado",t.is_eliminado);
+            cmd.Parameters.AddWithValue("@is_eliminado",false);
             cmd.Parameters.AddWithValue("@id_usuario",t.id_usuario);
             cmd.Parameters.AddWithValue("@fecha_creacion",t.fecha_creacion);
             return cmd.ExecuteNonQuery();

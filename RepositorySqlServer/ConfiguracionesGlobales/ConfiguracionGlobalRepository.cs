@@ -26,7 +26,7 @@ namespace RepositorySqlServer.ConfiguracionesGlobales
             cmd.Parameters.AddWithValue("@is_ambiente_produccion", t.is_ambiente_produccion);
             cmd.Parameters.AddWithValue("@id_usuario", t.id_usuario);
             cmd.Parameters.AddWithValue("@fecha_creacion", t.fecha_creacion);
-            cmd.Parameters.AddWithValue("@is_eliminado", t.is_eliminado);
+            cmd.Parameters.AddWithValue("@is_eliminado", false);
             return cmd.ExecuteNonQuery();
         }
 
@@ -80,7 +80,7 @@ namespace RepositorySqlServer.ConfiguracionesGlobales
             cmd.Parameters.AddWithValue("@is_ambiente_produccion", t.is_ambiente_produccion);
             cmd.Parameters.AddWithValue("@id_usuario", t.id_usuario);
             cmd.Parameters.AddWithValue("@fecha_creacion", t.fecha_creacion);
-            cmd.Parameters.AddWithValue("@is_eliminado", t.is_eliminado);
+            cmd.Parameters.AddWithValue("@fecha_creacion", t.is_eliminado);
             return cmd.ExecuteNonQuery();
         }
 
