@@ -26,6 +26,8 @@ using RepositoryInterface.ProductosKitsNewRepository;
 using RepositorySqlServer.ProductosKitsNew;
 using RepositoryInterface.MatricesNew;
 using RepositorySqlServer.MatricesNew;
+using RepositoryInterface.PozosNew;
+using RepositorySqlServer.PozosNew;
 
 namespace UnitOfWorkSqlServer
 {
@@ -78,6 +80,8 @@ namespace UnitOfWorkSqlServer
 
         public IMatrizNewRepository MatrizNewRepository { get; }
 
+        public IPozoNewRepository PozoNewRepository { get; }
+
         public UnitOfWorkSqlServerRepository(SqlConnection context, SqlTransaction transaction)
         {
             ConfiguracionGlobalRepository = new ConfiguracionGlobalRepository(context, transaction);
@@ -88,6 +92,7 @@ namespace UnitOfWorkSqlServer
             DatoFacturacionNewRepository=new DatoFacturacionNewRepository(context, transaction);
             ProductoKitNewRepository= new ProductoKitNewRepository(context,transaction);
             MatrizNewRepository= new MatrizNewRepository(context,transaction);
+            PozoNewRepository=new PozoNewRepository(context,transaction);
             //EgresoCategoriaRepository = new EgresoCategoriaRepository(context, transaction);
             //EgresoSubCategoriaRepository = new EgresoSubCategoriaRepository(context, transaction);
             //SucursalesRepository = new SucursalesRepository(context, transaction);
