@@ -1,7 +1,7 @@
 ﻿using Models;
 using Models.Common;
 using Models.Enum;
-using Models.MatricesNew;
+using Models.RedesNew;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,37 +9,37 @@ using System.Text;
 using System.Threading.Tasks;
 using UnitOfWorkInterface;
 
-namespace Services.MatricesNew
+namespace Services.RedesNew
 {
-    public class MatrizNewServices
+    public class RedNewServices
     {
         private readonly IUnitOfWork _uniOfWork;
         public ValidationsFluent ValidationResult { get; }
-        public MatrizNewServices(IUnitOfWork unitOfWork)
+        public RedNewServices(IUnitOfWork unitOfWork)
         {
             _uniOfWork = unitOfWork;
             ValidationResult = new ValidationsFluent();
         }
         /// <summary>
-        /// Crea un Matriz
+        /// Crea un Red
         /// </summary>
-        /// <param name="_MatrizNew">
-        /// Objeto de tipo MatrizNew con todos sus atributos completos para ser insertado en la BBDD
+        /// <param name="_RedNew">
+        /// Objeto de tipo RedNew con todos sus atributos completos para ser insertado en la BBDD
         /// </param>
-        public void Create(MatrizNew _MatrizNew)
+        public void Create(RedNew _RedNew)
         {
             try
             {
-                MatrizNewValidator validator = new MatrizNewValidator();
-                ValidationResult.Validation = validator.Validate(_MatrizNew);
+                RedNewValidator validator = new RedNewValidator();
+                ValidationResult.Validation = validator.Validate(_RedNew);
                 if (ValidationResult.Validation.IsValid)
                 {
                     int result;
-                    using (var context = _uniOfWork.Create()) { result = context.Repository.MatrizNewRepository.Create(_MatrizNew); context.SaveChange(); }
+                    using (var context = _uniOfWork.Create()) { result = context.Repository.RedNewRepository.Create(_RedNew); context.SaveChange(); }
                     if (result > 0)
                     {
                         ValidationResult.Status = Models.Enum.Status.StatusEnum.Ok;
-                        ValidationResult.Message = "Matriz registrado correctamente.";
+                        ValidationResult.Message = "Red registrado correctamente.";
                     }
                     return;
                 }
@@ -58,22 +58,22 @@ namespace Services.MatricesNew
 
         }
         /// <summary>
-        /// Obtiene un MatrizNew existente en la BBDD por el id
+        /// Obtiene un RedNew existente en la BBDD por el id
         /// </summary>
-        /// <param name="_IdMatriz">
-        /// ID del MatrizNew
+        /// <param name="_IdRed">
+        /// ID del RedNew
         /// </param>
-        /// <returns>Retorna un MatrizNew</returns>
-        public MatrizNew GetById(int _IdMatriz)
+        /// <returns>Retorna un RedNew</returns>
+        public RedNew GetById(int _IdRed)
         {
-            MatrizNew Matriz = new MatrizNew();
+            RedNew Red = new RedNew();
             try
             {
                 using (var context = _uniOfWork.Create())
                 {
-                    Matriz = context.Repository.MatrizNewRepository.GetById(_IdMatriz);
+                    Red = context.Repository.RedNewRepository.GetById(_IdRed);
                 }
-                return Matriz;
+                return Red;
             }
             catch (Exception ex)
             {
@@ -83,21 +83,21 @@ namespace Services.MatricesNew
             }
         }
         /// <summary>
-        /// Obtiene una lista de todos los MatrizNew existentes en la BBDD
+        /// Obtiene una lista de todos los RedNew existentes en la BBDD
         /// </summary>
         /// <returns>
-        /// Devuelve un objeto lista de tipo MatrizNew con todos sus Datos
+        /// Devuelve un objeto lista de tipo RedNew con todos sus Datos
         /// </returns>
-        private List<MatrizNew> GetAll()
+        private List<RedNew> GetAll()
         {
             try
             {
-                List<MatrizNew> matrizList = new List<MatrizNew>();
+                List<RedNew> RedList = new List<RedNew>();
                 using (var context = _uniOfWork.Create())
                 {
-                    matrizList = context.Repository.MatrizNewRepository.GetAll();
+                    RedList = context.Repository.RedNewRepository.GetAll();
                 }
-                return matrizList;
+                return RedList;
             }
             catch (Exception ex)
             {
@@ -107,18 +107,18 @@ namespace Services.MatricesNew
             }
         }
         /// <summary>
-        /// Obtiene una lista de todos los MatrizNew no eliminados existentes en la BBDD
+        /// Obtiene una lista de todos los RedNew no eliminados existentes en la BBDD
         /// </summary>
-        /// <returns>Devuelve un objeto lista de tipo MatrizNew con todos sus Datos</returns>
-        private List<MatrizNew> GetAllNoEliminados()
+        /// <returns>Devuelve un objeto lista de tipo RedNew con todos sus Datos</returns>
+        private List<RedNew> GetAllNoEliminados()
         {
             try
             {
-                List<MatrizNew> matrizList = new List<MatrizNew>();
-                matrizList = GetAll();
-                var Result = from MatrizNew in matrizList
-                             where MatrizNew.isEliminado == false
-                             select MatrizNew;
+                List<RedNew> RedList = new List<RedNew>();
+                RedList = GetAll();
+                var Result = from RedNew in RedList
+                             where RedNew.isEliminado == false
+                             select RedNew;
                 return Result.ToList();
             }
             catch (Exception ex)
@@ -129,18 +129,18 @@ namespace Services.MatricesNew
             }
         }
         /// <summary>
-        /// Obtiene una lista de todos los MatrizNew eliminados existentes en la BBDD
+        /// Obtiene una lista de todos los RedNew eliminados existentes en la BBDD
         /// </summary>
-        /// <returns>Devuelve un objeto lista de tipo MatrizNew con todos sus Datos</returns>
-        private List<MatrizNew> GetAllEliminados()
+        /// <returns>Devuelve un objeto lista de tipo RedNew con todos sus Datos</returns>
+        private List<RedNew> GetAllEliminados()
         {
             try
             {
-                List<MatrizNew> matrizList = new List<MatrizNew>();
-                matrizList = GetAll();
-                var Result = from MatrizNew in matrizList
-                             where MatrizNew.isEliminado == true
-                             select MatrizNew;
+                List<RedNew> RedList = new List<RedNew>();
+                RedList = GetAll();
+                var Result = from RedNew in RedList
+                             where RedNew.isEliminado == true
+                             select RedNew;
                 return Result.ToList();
             }
             catch (Exception ex)
@@ -151,11 +151,11 @@ namespace Services.MatricesNew
             }
         }
         /// <summary>
-        /// Obtiene una lista de todos los MatrizNew. Segun parametro indicado segun enumeracion.
+        /// Obtiene una lista de todos los RedNew. Segun parametro indicado segun enumeracion.
         /// </summary>
         /// <param name="_operacion">Parametro seleccionado</param>
-        /// <returns>Devuelve un objeto lista de MatrizNew</returns>
-        public List<MatrizNew> GetAll(GetAll.GetAllEnum _operacion)
+        /// <returns>Devuelve un objeto lista de RedNew</returns>
+        public List<RedNew> GetAll(GetAll.GetAllEnum _operacion)
         {
             try
             {
@@ -180,30 +180,30 @@ namespace Services.MatricesNew
             }
         }
         /// <summary>
-        /// Actualiza el MatrizNew 
+        /// Actualiza el RedNew 
         /// </summary>
-        /// <param name="_MatrizNew">
-        /// Objeto de tipo MatrizNew con todos sus atributos completos para ser insertado en la BBDD
+        /// <param name="_RedNew">
+        /// Objeto de tipo RedNew con todos sus atributos completos para ser insertado en la BBDD
         /// </param>
-        public void Update(MatrizNew _MatrizNew)
+        public void Update(RedNew _RedNew)
         {
 
             try
             {
-                MatrizNewValidator validator = new MatrizNewValidator();
-                ValidationResult.Validation = validator.Validate(_MatrizNew);
+                RedNewValidator RedValidador = new RedNewValidator();
+                ValidationResult.Validation = RedValidador.Validate(_RedNew);
                 if (ValidationResult.Validation.IsValid)
                 {
                     int result;
                     using (var context = _uniOfWork.Create())
                     {
-                        result = context.Repository.MatrizNewRepository.Update(_MatrizNew);
+                        result = context.Repository.RedNewRepository.Update(_RedNew);
                         context.SaveChange();
                     }
                     if (result > 0)
                     {
                         ValidationResult.Status = Models.Enum.Status.StatusEnum.Ok;
-                        ValidationResult.Message = "Matriz actualizado correctamente.";
+                        ValidationResult.Message = "Red actualizado correctamente.";
                     }
 
                 }
@@ -221,23 +221,23 @@ namespace Services.MatricesNew
 
         }
         /// <summary>
-        /// Elimina un MatrizNew
+        /// Elimina un RedNew
         /// </summary>
-        /// <param name="_MatrizNew">
-        /// Objeto de tipo MatrizNew con todos sus atributos completos para ser insertado en la BBDD
+        /// <param name="_RedNew">
+        /// Objeto de tipo RedNew con todos sus atributos completos para ser insertado en la BBDD
         /// </param>
-        public void Remove(MatrizNew _MatrizNew)
+        public void Remove(RedNew _RedNew)
         {
             int result = 0;
             try
             {
-                MatrizNewValidator validator = new MatrizNewValidator();
-                ValidationResult.Validation = validator.Validate(_MatrizNew);
+                RedNewValidator validator = new RedNewValidator();
+                ValidationResult.Validation = validator.Validate(_RedNew);
                 if (ValidationResult.Validation.IsValid)
                 {
                     using (var context = _uniOfWork.Create())
                     {
-                        result = context.Repository.MatrizNewRepository.Remove(_MatrizNew.idMatriz);
+                        result = context.Repository.RedNewRepository.Remove(_RedNew.idRed);
                         context.SaveChange();
                     }
                     if (result > 0) { ValidationResult.Status = Models.Enum.Status.StatusEnum.Ok; }
@@ -253,20 +253,20 @@ namespace Services.MatricesNew
         /// <summary>
         /// Actualiza el campo is_eliminado de la base de datos.
         /// </summary>
-        /// <param name="_IdMatriz">ID del MatrizNew a actualiza</param>
+        /// <param name="_IdRed">ID del RedNew a actualiza</param>
         /// <param name="_isEliminado">parametro a actualizar</param>
-        public void UpdateIsEliminado(int _IdMatriz, Boolean _isEliminado)
+        public void UpdateIsEliminado(int _IdRed, Boolean _isEliminado)
         {
             try
             {
                 int result = 0;
                 using (var context = _uniOfWork.Create())
                 {
-                    result = context.Repository.MatrizNewRepository.UpdateSoftDelete(_IdMatriz, _isEliminado);
+                    result = context.Repository.RedNewRepository.UpdateSoftDelete(_IdRed, _isEliminado);
                     context.SaveChange();
                 }
                 if (result > 0)
-                { ValidationResult.Status = Models.Enum.Status.StatusEnum.Ok; ValidationResult.Message = "Matriz eliminado correctamente."; }
+                { ValidationResult.Status = Models.Enum.Status.StatusEnum.Ok; ValidationResult.Message = "Red eliminado correctamente."; }
             }
             catch (Exception ex)
             {
