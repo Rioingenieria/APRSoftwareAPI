@@ -22,7 +22,7 @@ namespace UnitTest.ProveedoresNew
             isCorrect = Models.Enum.Status.StatusEnum.Ok;
              _proveedor = new ProveedorNew() 
              {
-             id_proveedor=7,
+             id_proveedor=1,
              nombre="1",
              ciudad="1",
              telefono="1",

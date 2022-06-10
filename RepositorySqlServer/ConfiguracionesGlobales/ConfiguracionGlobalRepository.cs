@@ -73,14 +73,13 @@ namespace RepositorySqlServer.ConfiguracionesGlobales
         {
             var cmd = CreateCommand("UPDATE configuraciones_globales  set " +
                 "web=@web,is_ambiente_produccion=@is_ambiente_produccion,id_usuario=@id_usuario," +
-                "fecha_creacion=@fecha_creacion,is_eliminado=@is_eliminado " +
+                "fecha_creacion=@fecha_creacion " +
                 "WHERE id_configuracion=@id");
             cmd.Parameters.AddWithValue("@id", t.id_configuracion);
             cmd.Parameters.AddWithValue("@web", t.web);
             cmd.Parameters.AddWithValue("@is_ambiente_produccion", t.is_ambiente_produccion);
             cmd.Parameters.AddWithValue("@id_usuario", t.id_usuario);
             cmd.Parameters.AddWithValue("@fecha_creacion", t.fecha_creacion);
-            cmd.Parameters.AddWithValue("@fecha_creacion", t.is_eliminado);
             return cmd.ExecuteNonQuery();
         }
 

@@ -20,10 +20,10 @@ namespace UnitTest.ProductosKitsNew
             isCorrect = Models.Enum.Status.StatusEnum.Ok;
             _producto = new ProductoKitNew()
             {
-              idProducto =5,
+              idProducto =1,
               idKit = 1,
               cantidadProducto = 1,
-              idProductoKit = 2,
+              idProductoKit = 1,
               isEliminado=false
             };
 

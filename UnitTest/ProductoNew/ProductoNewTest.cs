@@ -18,7 +18,7 @@ namespace UnitTest.ProductoNew
             isCorrect = Models.Enum.Status.StatusEnum.Ok;
             _producto = new Models.ProductosNew.ProductoNew() 
             {
-            id_producto=1,
+            id_producto=5,
             nombre="1",
             descripcion="1",
             existencia=1,
