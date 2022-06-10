@@ -14,6 +14,7 @@ using RepositoryInterface.ProductosCategoriaNew;
 using RepositoryInterface.ProveedoresNew;
 using RepositoryInterface.DatosFacturacionNew;
 using RepositoryInterface.ProductosKitsNewRepository;
+using RepositoryInterface.MatricesNew;
 
 namespace UnitOfWorkInterface
 {
@@ -26,6 +27,7 @@ namespace UnitOfWorkInterface
         IProveedorNewRepository  ProveedorNewRepository { get; }
         IDatoFacturacionNewRepository DatoFacturacionNewRepository { get; }
         IProductoKitNewRepository ProductoKitNewRepository { get; }
+        IMatrizNewRepository MatrizNewRepository { get; }
         //IEgresoCategoriaRepository EgresoCategoriaRepository { get; }
         //IEgresoSubCategoriaRepository EgresoSubCategoriaRepository { get; }
         //ISucursalesRepository SucursalesRepository { get; }
