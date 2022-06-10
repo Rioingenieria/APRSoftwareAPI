@@ -21,11 +21,21 @@ namespace RepositorySqlServer.DatosFacturacionNew
         {
             var cmd = CreateCommand("INSERT INTO datos_facturaciones_new " +
                       "(rut,razon_social,direccion,comuna_estado,id_giro_facturacion,email_intercambio," +
-                      "documento_pago,forma_pago_estado,id_usuario,fecha_creacion)" +
+                      "documento_pago,forma_pago_estado,id_usuario,fecha_creacion,is_eliminado)" +
                       "VALUES" +
                       "(@rut,@razon_social,@direccion,@comuna_estado,@id_giro_facturacion,@email_intercambio," +
-                      "@documento_pago,@forma_pago_estado,@id_usuario,@fecha_creacion)");
-            GetEntity(t, ref cmd);
+                      "@documento_pago,@forma_pago_estado,@id_usuario,@fecha_creacion,@is_eliminado)");
+            cmd.Parameters.AddWithValue("@rut", t.Rut);
+            cmd.Parameters.AddWithValue("@razon_social", t.RazonSocial);
+            cmd.Parameters.AddWithValue("@direccion", t.Direccion);
+            cmd.Parameters.AddWithValue("@comuna_estado", t.ComunaEstado);
+            cmd.Parameters.AddWithValue("@id_giro_facturacion", t.IdGiroFacturacion);
+            cmd.Parameters.AddWithValue("@email_intercambio", t.EmailIntercambio);
+            cmd.Parameters.AddWithValue("@documento_pago", t.DocumentoPago);
+            cmd.Parameters.AddWithValue("@forma_pago_estado", t.FormaPagoEstado);
+            cmd.Parameters.AddWithValue("@id_usuario", t.IdUsuario);
+            cmd.Parameters.AddWithValue("@fecha_creacion", t.FechaCreacion);
+            cmd.Parameters.AddWithValue("@is_eliminado",false);
             return cmd.ExecuteNonQuery();
         }
 
@@ -95,9 +105,20 @@ namespace RepositorySqlServer.DatosFacturacionNew
             var cmd = CreateCommand("UPDATE datos_facturaciones_new SET rut = @rut,razon_social= @razon_social, " +
                   "direccion = @direccion,comuna_estado = @comuna_estado,id_giro_facturacion = @id_giro_facturacion, " +
                   "email_intercambio = @email_intercambio,documento_pago = @documento_pago,forma_pago_estado = @forma_pago_estado," +
-                  "id_usuario=@id_usuario,fecha_creacion = @fecha_creacion " +
+                  "id_usuario=@id_usuario,fecha_creacion = @fecha_creacion,is_eliminado=@is_eliminado " +
                   "WHERE id_dato_facturacion = @id_dato_facturacion");
-            GetEntity(t, ref cmd);
+            cmd.Parameters.AddWithValue("@id_dato_facturacion", t.IdDatoFacturacion);
+            cmd.Parameters.AddWithValue("@rut", t.Rut);
+            cmd.Parameters.AddWithValue("@razon_social", t.RazonSocial);
+            cmd.Parameters.AddWithValue("@direccion", t.Direccion);
+            cmd.Parameters.AddWithValue("@comuna_estado", t.ComunaEstado);
+            cmd.Parameters.AddWithValue("@id_giro_facturacion", t.IdGiroFacturacion);
+            cmd.Parameters.AddWithValue("@email_intercambio", t.EmailIntercambio);
+            cmd.Parameters.AddWithValue("@documento_pago", t.DocumentoPago);
+            cmd.Parameters.AddWithValue("@forma_pago_estado", t.FormaPagoEstado);
+            cmd.Parameters.AddWithValue("@id_usuario", t.IdUsuario);
+            cmd.Parameters.AddWithValue("@fecha_creacion", t.FechaCreacion);
+            cmd.Parameters.AddWithValue("@is_eliminado", t.isEliminado);
             return cmd.ExecuteNonQuery(); ;
         }
 
@@ -108,20 +129,6 @@ namespace RepositorySqlServer.DatosFacturacionNew
             cmd.Parameters.AddWithValue("@id_dato_facturacion", _id);
             cmd.Parameters.AddWithValue("@isEliminado", _isEliminado);
             return cmd.ExecuteNonQuery();
-        }
-        public void GetEntity(DatoFacturacionNew _datosFacturacion, ref SqlCommand cmd)
-        {
-            cmd.Parameters.AddWithValue("@id_dato_facturacion", _datosFacturacion.IdDatoFacturacion);
-            cmd.Parameters.AddWithValue("@rut", _datosFacturacion.Rut);
-            cmd.Parameters.AddWithValue("@razon_social", _datosFacturacion.RazonSocial);
-            cmd.Parameters.AddWithValue("@direccion", _datosFacturacion.Direccion);
-            cmd.Parameters.AddWithValue("@comuna_estado", _datosFacturacion.ComunaEstado);
-            cmd.Parameters.AddWithValue("@id_giro_facturacion", _datosFacturacion.IdGiroFacturacion);
-            cmd.Parameters.AddWithValue("@email_intercambio", _datosFacturacion.EmailIntercambio);
-            cmd.Parameters.AddWithValue("@documento_pago", _datosFacturacion.DocumentoPago);
-            cmd.Parameters.AddWithValue("@forma_pago_estado", _datosFacturacion.FormaPagoEstado);
-            cmd.Parameters.AddWithValue("@id_usuario", _datosFacturacion.IdUsuario);
-            cmd.Parameters.AddWithValue("@fecha_creacion", _datosFacturacion.FechaCreacion);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace RepositorySqlServer.ProveedoresNew
             cmd.Parameters.AddWithValue("@email", t.email);
             cmd.Parameters.AddWithValue("@descripcion", t.descripcion);
             cmd.Parameters.AddWithValue("@id_dato_facturacion", t.id_dato_facturacion);
-            cmd.Parameters.AddWithValue("@is_eliminado", t.is_eliminado);
+            cmd.Parameters.AddWithValue("@is_eliminado", false);
             return cmd.ExecuteNonQuery();
         }
 
