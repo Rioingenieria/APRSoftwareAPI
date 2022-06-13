@@ -49,91 +49,91 @@ namespace Models.ConfiguracionesPeriodicosNew
         private int _id_usuario;
         private Boolean _is_eliminado;
 
-        public Boolean is_eliminado
+        public Boolean isEliminado
         {
             get { return _is_eliminado; }
             set { _is_eliminado = value; }
         }
 
-        public int id_usuario
+        public int idUsuario
         {
             get { return _id_usuario; }
             set { _id_usuario = value; }
         }
 
-        public DateTime fecha_creacion
+        public DateTime fechaCreacion
         {
             get { return _fecha_creacion; }
             set { _fecha_creacion = value; }
         }
 
-        public string envio_whatsapp
+        public string envioWhatsapp
         {
             get { return _envio_whatsapp; }
             set { _envio_whatsapp = value; }
         }
 
-        public int color_secundario
+        public int colorSecundario
         {
             get { return _color_secundario; }
             set { _color_secundario = value; }
         }
 
-        public int color_principal
+        public int colorPrincipal
         {
             get { return _color_principal; }
             set { _color_principal = value; }
         }
 
-        public string fin_tarifa_verano
+        public string finTarifaVerano
         {
             get { return _fin_tarifa_verano; }
             set { _fin_tarifa_verano = value; }
         }
 
-        public string inicio_tarifa_verano
+        public string inicioTarifaVerano
         {
             get { return _incio_tarifa_verano; }
             set { _incio_tarifa_verano = value; }
         }
 
-        public Boolean contar_clientes_subsidio_0
+        public Boolean contarClientesSubsidio_0
         {
             get { return _contar_clientes_subsidio_0; }
             set { _contar_clientes_subsidio_0 = value; }
         }
 
-        public string password_megasync
+        public string passwordMegasync
         {
             get { return _password_megasync; }
             set { _password_megasync = value; }
         }
 
-        public string usuario_megasync
+        public string usuarioMegasync
         {
             get { return _usuario_megasnyc; }
             set { _usuario_megasnyc = value; }
         }
 
-        public Boolean subsidio_solo_agua
+        public Boolean subsidioSoloAgua
         {
             get { return _subsidio_solo_agua; }
             set { _subsidio_solo_agua = value; }
         }
 
-        public string carpeta_megasync
+        public string carpetaMegasync
         {
             get { return _carpeta_megasync; }
             set { _carpeta_megasync = value; }
         }
 
-        public DateTime periodo_inicio_servidor
+        public DateTime periodoInicioServidor
         {
             get { return _periodo_inicio_servidor; }
             set { _periodo_inicio_servidor = value; }
         }
 
-        public int frecuencia_servidor
+        public int frecuenciaServidor
         {
             get { return _frecuencia_servidor; }
             set { _frecuencia_servidor = value; }
@@ -145,37 +145,37 @@ namespace Models.ConfiguracionesPeriodicosNew
             set { _version = value; }
         }
 
-        public int dias_aviso_corte
+        public int diasAvisoCorte
         {
             get { return _dias_aviso_corte; }
             set { _dias_aviso_corte = value; }
         }
 
-        public Boolean exencion_iva
+        public Boolean exencionIva
         {
             get { return _exencion_iva; }
             set { _exencion_iva = value; }
         }
 
-        public int tipo_servicio
+        public int tipoServicio
         {
             get { return _tipo_servicio; }
             set { _tipo_servicio = value; }
         }
 
-        public Boolean  tramo_subsidio
+        public Boolean  tramoSubsidio
         {
             get { return _tramo_subsidio; }
             set { _tramo_subsidio = value; }
         }
 
-        public Boolean app_movil
+        public Boolean appMovil
         {
             get { return _app_movil; }
             set { _app_movil = value; }
         }
 
-        public string caja_vecina
+        public string cajaVecina
         {
             get { return _caja_vecina; }
             set { _caja_vecina = value; }
@@ -188,13 +188,13 @@ namespace Models.ConfiguracionesPeriodicosNew
         }
 
 
-        public Boolean admin_subsidio
+        public Boolean adminSubsidio
         {
             get { return _admin_subsidio; }
             set { _admin_subsidio = value; }
         }
 
-        public Boolean subsidio_iva
+        public Boolean subsidioIva
         {
             get { return _subsidio_iva; }
             set { _subsidio_iva = value; }
@@ -206,13 +206,13 @@ namespace Models.ConfiguracionesPeriodicosNew
             set { _alcantarillado = value; }
         }
 
-        public int porcentaje_consumo
+        public int porcentajeConsumo
         {
             get { return _porcentaje_consumo; }
             set { _porcentaje_consumo = value; }
         }
 
-        public int dias_noti
+        public int diasNoti
         {
             get { return _dias_noti; }
             set { _dias_noti = value; }
@@ -224,13 +224,13 @@ namespace Models.ConfiguracionesPeriodicosNew
             set { _caducado = value; }
         }
 
-        public DateTime fecha_caducar
+        public DateTime fechaCaducar
         {
             get { return _fecha_caducar; }
             set { _fecha_caducar = value; }
         }
 
-        public Boolean ultima_boleta
+        public Boolean ultimaBoleta
         {
             get { return _ultima_boleta; }
             set { _ultima_boleta = value; }
@@ -241,12 +241,12 @@ namespace Models.ConfiguracionesPeriodicosNew
             get { return _subsidio; }
             set { _subsidio = value; }
         }
-        public int dias_vencimiento
+        public int diasVencimiento
         {
             get { return _dias_vencimiento; }
             set { _dias_vencimiento = value; }
         }
-        public int meses_ctramite
+        public int mesesCtramite
         {
             get { return _meses_ctramite; }
             set { _meses_ctramite = value; }
@@ -258,30 +258,30 @@ namespace Models.ConfiguracionesPeriodicosNew
             set { _informacion = value; }
         }
 
-        public Boolean funcion_escalonada
+        public Boolean funcionEscalonada
         {
             get { return _funcion_escalonada; }
             set { _funcion_escalonada = value; }
         }
-        public Boolean iva_usuario
+        public Boolean ivaUsuario
         {
             get { return _iva_usuario; }
             set { _iva_usuario = value; }
         }
-        public int meses_subsidio
+        public int mesesSubsidio
         {
             get { return _meses_subsidio; }
             set { _meses_subsidio = value; }
         }
 
-        public int años_subsidio
+        public int añosSubsidio
         {
             get { return _años_subsidio; }
             set { _años_subsidio = value; }
         }
 
 
-        public int id_configuracion_periodico
+        public int idConfiguracionPeriodico
         {
             get { return _id_configuracion_periodico; }
             set { _id_configuracion_periodico = value; }

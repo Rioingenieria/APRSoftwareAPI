@@ -11,10 +11,10 @@ namespace Models.ProductosNew
     {
         public ProductoNewValidator() 
         {
-            RuleFor(ProductoNew => ProductoNew.id_bodega).NotNull().NotEmpty().WithMessage("El producto no se puede registrar sin identificador de bodega.");
-            RuleFor(ProductoNew => ProductoNew.id_proveedor).NotNull().NotEmpty().WithMessage("El producto no se puede registrar sin identificador de provedor.");
-            RuleFor(ProductoNew => ProductoNew.id_proveedor).NotNull().NotEmpty().WithMessage("El producto no se puede registrar sin identificador de estado.");
-            RuleFor(ProductoNew => ProductoNew.id_categoria_producto).NotNull().NotEmpty().WithMessage("El producto no se puede registrar sin categoria de bodega.");
+            RuleFor(ProductoNew => ProductoNew.idBodega).NotNull().NotEmpty().WithMessage("El producto no se puede registrar sin identificador de bodega.");
+            RuleFor(ProductoNew => ProductoNew.idProveedor).NotNull().NotEmpty().WithMessage("El producto no se puede registrar sin identificador de provedor.");
+            RuleFor(ProductoNew => ProductoNew.idEstadoEstado).NotNull().NotEmpty().WithMessage("El producto no se puede registrar sin identificador de estado.");
+            RuleFor(ProductoNew => ProductoNew.idCategoriaProducto).NotNull().NotEmpty().WithMessage("El producto no se puede registrar sin categoria de bodega.");
             RuleFor(ProductoNew => ProductoNew.codigo).NotNull().NotEmpty().WithMessage("El producto no se puede registrar sin el codigo.");
         }
     }

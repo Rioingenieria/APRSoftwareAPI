@@ -17,12 +17,12 @@ namespace UnitTest.ConfiguracionesGlobales
             isCorrect = Models.Enum.Status.StatusEnum.Ok;
             ConfigGlobal = new ConfiguracionGlobal()
             {
-                id_configuracion = 1,
+                idConfiguracion = 1,
                 web = true,
-                is_eliminado = false,
-                id_usuario = 1,
-                fecha_creacion = System.DateTime.Now,
-                is_ambiente_produccion = false
+                isEliminado = false,
+                idUsuario = 1,
+                fechaCreacion = System.DateTime.Now,
+                isAmbienteProduccion = false
             };
         }
         [Test]
@@ -47,7 +47,7 @@ namespace UnitTest.ConfiguracionesGlobales
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             ConfiguracionGlobalServices config = new ConfiguracionGlobalServices(unitOfWork);
-            config.UpdateIsEliminado(ConfigGlobal.id_configuracion, true);
+            config.UpdateIsEliminado(ConfigGlobal.idConfiguracion, true);
             Console.WriteLine(config.ValidationResult.Message.ToString());
             Assert.AreEqual(isCorrect, config.ValidationResult.Status);
         }
@@ -72,7 +72,7 @@ namespace UnitTest.ConfiguracionesGlobales
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             ConfiguracionGlobalServices config = new ConfiguracionGlobalServices(unitOfWork);
-            var Result = config.GetById(ConfigGlobal.id_configuracion);
+            var Result = config.GetById(ConfigGlobal.idConfiguracion);
             Assert.IsNotNull(Result);
         }
         [Test]

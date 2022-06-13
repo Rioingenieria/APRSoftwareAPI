@@ -11,7 +11,7 @@ namespace Models.ConfiguracionesGlobales
     {
         public ConfiguracionGlobalValidator()
         {
-            RuleFor(ConfiguracionesGlobales => ConfiguracionesGlobales.id_usuario).NotNull().WithMessage("La configucaión no se puede registrar sin el id de usuario.");
+            RuleFor(ConfiguracionesGlobales => ConfiguracionesGlobales.idUsuario).NotNull().WithMessage("La configucaión no se puede registrar sin el id de usuario.");
         }
         
     }

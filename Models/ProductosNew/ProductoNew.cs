@@ -25,25 +25,25 @@ namespace Models.ProductosNew
         private int _id_categoria_producto;
         private int _id_estado_estado;
 
-        public int id_estado_estado
+        public int idEstadoEstado
         {
             get { return _id_estado_estado; }
             set { _id_estado_estado = value; }
         }
 
-        public int id_categoria_producto
+        public int idCategoriaProducto
         {
             get { return _id_categoria_producto; }
             set { _id_categoria_producto = value; }
         }
 
-        public int id_bodega
+        public int idBodega
         {
             get { return _id_bodega; }
             set { _id_bodega = value; }
         }
 
-        public int id_proveedor
+        public int idProveedor
         {
             get { return _id_proveedor; }
             set { _id_proveedor = value; }
@@ -55,19 +55,19 @@ namespace Models.ProductosNew
             set { _sku = value; }
         }
 
-        public Boolean is_eliminado
+        public Boolean isEliminado
         {
             get { return _is_eliminado; }
             set { _is_eliminado = value; }
         }
 
-        public DateTime fecha_creacion
+        public DateTime fechaCreacion
         {
             get { return _fecha_creacion; }
             set { _fecha_creacion = value; }
         }
 
-        public int id_usuario
+        public int idUsuario
         {
             get { return _id_usuario; }
             set { _id_usuario = value; }
@@ -79,7 +79,7 @@ namespace Models.ProductosNew
             set { _codigo = value; }
         }
 
-        public int unidad_medida_estado
+        public int unidadMedidaEstado
         {
             get { return _unidad_medida_estado; }
             set { _unidad_medida_estado = value; }
@@ -116,7 +116,7 @@ namespace Models.ProductosNew
         }
 
 
-        public int id_producto
+        public int idProducto
         {
             get { return _id_Producto; }
             set { _id_Producto = value; }

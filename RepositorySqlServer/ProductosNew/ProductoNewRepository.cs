@@ -27,16 +27,16 @@ namespace RepositorySqlServer.ProductosNew
             cmd.Parameters.AddWithValue("@existencia",t.existencia);
             cmd.Parameters.AddWithValue("@precio",t.precio);
             cmd.Parameters.AddWithValue("@costo",t.costo);
-            cmd.Parameters.AddWithValue("@unidad_medida_estado",t.unidad_medida_estado);
+            cmd.Parameters.AddWithValue("@unidad_medida_estado",t.unidadMedidaEstado);
             cmd.Parameters.AddWithValue("@codigo",t.codigo);
-            cmd.Parameters.AddWithValue("@id_usuario",t.id_usuario);
-            cmd.Parameters.AddWithValue("@fecha_creacion",t.fecha_creacion);
-            cmd.Parameters.AddWithValue("@is_eliminado",t.is_eliminado);
+            cmd.Parameters.AddWithValue("@id_usuario",t.idUsuario);
+            cmd.Parameters.AddWithValue("@fecha_creacion",t.fechaCreacion);
+            cmd.Parameters.AddWithValue("@is_eliminado",t.isEliminado);
             cmd.Parameters.AddWithValue("@sku",t.sku);
-            cmd.Parameters.AddWithValue("@id_proveedor",t.id_proveedor);
-            cmd.Parameters.AddWithValue("@id_bodega",t.id_bodega);
-            cmd.Parameters.AddWithValue("@id_categoria_producto",t.id_categoria_producto);
-            cmd.Parameters.AddWithValue("@id_estado_estado",t.id_estado_estado);
+            cmd.Parameters.AddWithValue("@id_proveedor",t.idProveedor);
+            cmd.Parameters.AddWithValue("@id_bodega",t.idBodega);
+            cmd.Parameters.AddWithValue("@id_categoria_producto",t.idCategoriaProducto);
+            cmd.Parameters.AddWithValue("@id_estado_estado",t.idEstadoEstado);
             return cmd.ExecuteNonQuery();
 
         }
@@ -45,22 +45,22 @@ namespace RepositorySqlServer.ProductosNew
         {
             var producto=new ProductoNew() 
             {
-                id_producto=Convert.ToInt16(dr["id_producto"]),
+                idProducto=Convert.ToInt16(dr["id_producto"]),
                 nombre=Convert.ToString(dr["nombre"]),
                 descripcion=Convert.ToString(dr["descripcion"]),
                 existencia=Convert.ToDecimal(dr["existencia"]),
                 precio=Convert.ToDecimal(dr["precio"]),
                 costo=Convert.ToDecimal(dr["costo"]),
-                unidad_medida_estado=Convert.ToInt16(dr["unidad_medida_estado"]),
+                unidadMedidaEstado=Convert.ToInt16(dr["unidad_medida_estado"]),
                 codigo=Convert.ToString(dr["codigo"]),
-                id_usuario=Convert.ToInt16(dr["id_usuario"]),
-                fecha_creacion=Convert.ToDateTime(dr["fecha_creacion"]),
-                is_eliminado=Convert.ToBoolean(dr["is_eliminado"]),
+                idUsuario=Convert.ToInt16(dr["id_usuario"]),
+                fechaCreacion=Convert.ToDateTime(dr["fecha_creacion"]),
+                isEliminado=Convert.ToBoolean(dr["is_eliminado"]),
                 sku=Convert.ToString(dr["sku"]),
-                id_proveedor=Convert.ToInt16(dr["id_proveedor"]),
-                id_bodega=Convert.ToInt16(dr["id_bodega"]),
-                id_categoria_producto=Convert.ToInt16(dr["id_categoria_producto"]),
-                id_estado_estado=Convert.ToInt16(dr["id_estado_estado"])
+                idProveedor=Convert.ToInt16(dr["id_proveedor"]),
+                idBodega=Convert.ToInt16(dr["id_bodega"]),
+                idCategoriaProducto=Convert.ToInt16(dr["id_categoria_producto"]),
+                idEstadoEstado=Convert.ToInt16(dr["id_estado_estado"])
 
             };
             return producto;
@@ -122,22 +122,22 @@ namespace RepositorySqlServer.ProductosNew
                 "codigo=@codigo,id_usuario=@id_usuario,fecha_creacion=@fecha_creacion,is_eliminado=@is_eliminado,sku=@sku" +
                 ",id_proveedor=@id_proveedor,id_bodega=@id_bodega,id_categoria_producto=@id_categoria_producto,id_estado_estado=@id_estado_estado " +
                 "WHERE id_producto=@id_producto");
-            cmd.Parameters.AddWithValue("@id_producto", t.id_producto);
+            cmd.Parameters.AddWithValue("@id_producto", t.idProducto);
             cmd.Parameters.AddWithValue("@nombre", t.nombre);
             cmd.Parameters.AddWithValue("@descripcion", t.descripcion);
             cmd.Parameters.AddWithValue("@existencia", t.existencia);
             cmd.Parameters.AddWithValue("@precio", t.precio);
             cmd.Parameters.AddWithValue("@costo", t.costo);
-            cmd.Parameters.AddWithValue("@unidad_medida_estado", t.unidad_medida_estado);
+            cmd.Parameters.AddWithValue("@unidad_medida_estado", t.unidadMedidaEstado);
             cmd.Parameters.AddWithValue("@codigo", t.codigo);
-            cmd.Parameters.AddWithValue("@id_usuario", t.id_usuario);
-            cmd.Parameters.AddWithValue("@fecha_creacion", t.fecha_creacion);
-            cmd.Parameters.AddWithValue("@is_eliminado", t.is_eliminado);
+            cmd.Parameters.AddWithValue("@id_usuario", t.idUsuario);
+            cmd.Parameters.AddWithValue("@fecha_creacion", t.fechaCreacion);
+            cmd.Parameters.AddWithValue("@is_eliminado", t.isEliminado);
             cmd.Parameters.AddWithValue("@sku", t.sku);
-            cmd.Parameters.AddWithValue("@id_proveedor", t.id_proveedor);
-            cmd.Parameters.AddWithValue("@id_bodega", t.id_bodega);
-            cmd.Parameters.AddWithValue("@id_categoria_producto", t.id_categoria_producto);
-            cmd.Parameters.AddWithValue("@id_estado_estado", t.id_estado_estado);
+            cmd.Parameters.AddWithValue("@id_proveedor", t.idProveedor);
+            cmd.Parameters.AddWithValue("@id_bodega", t.idBodega);
+            cmd.Parameters.AddWithValue("@id_categoria_producto", t.idCategoriaProducto);
+            cmd.Parameters.AddWithValue("@id_estado_estado", t.idEstadoEstado);
             return cmd.ExecuteNonQuery();
 
         }

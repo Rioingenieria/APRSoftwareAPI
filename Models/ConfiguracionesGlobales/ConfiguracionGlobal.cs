@@ -15,25 +15,25 @@ namespace Models.ConfiguracionesGlobales
         private DateTime _fecha_creacion;
         private Boolean _is_eliminado;
 
-        public Boolean is_eliminado
+        public Boolean isEliminado
         {
             get { return _is_eliminado; }
             set { _is_eliminado = value; }
         }
 
-        public DateTime fecha_creacion
+        public DateTime fechaCreacion
         {
             get { return _fecha_creacion; }
             set { _fecha_creacion = value; }
         }
 
-        public int id_usuario
+        public int idUsuario
         {
             get { return _id_usuario; }
             set { _id_usuario = value; }
         }
 
-        public Boolean is_ambiente_produccion
+        public Boolean isAmbienteProduccion
         {
             get { return _is_ambiente_produccion; }
             set { _is_ambiente_produccion = value; }
@@ -45,7 +45,7 @@ namespace Models.ConfiguracionesGlobales
             set { _web = value; }
         }
 
-        public int id_configuracion
+        public int idConfiguracion
         {
             get { return _id_configuracion; }
             set { _id_configuracion = value; }

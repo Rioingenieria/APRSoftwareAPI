@@ -23,9 +23,9 @@ namespace RepositorySqlServer.ConfiguracionesGlobales
                 "VALUES" +
                 "(@web,@is_ambiente_produccion,@id_usuario,@fecha_creacion,@is_eliminado)");
             cmd.Parameters.AddWithValue("@web", t.web);
-            cmd.Parameters.AddWithValue("@is_ambiente_produccion", t.is_ambiente_produccion);
-            cmd.Parameters.AddWithValue("@id_usuario", t.id_usuario);
-            cmd.Parameters.AddWithValue("@fecha_creacion", t.fecha_creacion);
+            cmd.Parameters.AddWithValue("@is_ambiente_produccion", t.isAmbienteProduccion);
+            cmd.Parameters.AddWithValue("@id_usuario", t.idUsuario);
+            cmd.Parameters.AddWithValue("@fecha_creacion", t.fechaCreacion);
             cmd.Parameters.AddWithValue("@is_eliminado", false);
             return cmd.ExecuteNonQuery();
         }
@@ -35,10 +35,10 @@ namespace RepositorySqlServer.ConfiguracionesGlobales
             ConfiguracionGlobal configuracion = new ConfiguracionGlobal
             {
             web=Convert.ToBoolean(dr["web"]),
-            is_ambiente_produccion=Convert.ToBoolean(dr["is_ambiente_produccion"]),
-            fecha_creacion=Convert.ToDateTime(dr["fecha_creacion"]),
-            id_usuario=Convert.ToInt16(dr["id_usuario"]),
-            is_eliminado=Convert.ToBoolean(dr["is_eliminado"])
+            isAmbienteProduccion =Convert.ToBoolean(dr["is_ambiente_produccion"]),
+            fechaCreacion=Convert.ToDateTime(dr["fecha_creacion"]),
+            idUsuario=Convert.ToInt16(dr["id_usuario"]),
+            isEliminado=Convert.ToBoolean(dr["is_eliminado"])
             };
             return configuracion;
         }
@@ -75,11 +75,11 @@ namespace RepositorySqlServer.ConfiguracionesGlobales
                 "web=@web,is_ambiente_produccion=@is_ambiente_produccion,id_usuario=@id_usuario," +
                 "fecha_creacion=@fecha_creacion " +
                 "WHERE id_configuracion=@id");
-            cmd.Parameters.AddWithValue("@id", t.id_configuracion);
+            cmd.Parameters.AddWithValue("@id", t.idConfiguracion);
             cmd.Parameters.AddWithValue("@web", t.web);
-            cmd.Parameters.AddWithValue("@is_ambiente_produccion", t.is_ambiente_produccion);
-            cmd.Parameters.AddWithValue("@id_usuario", t.id_usuario);
-            cmd.Parameters.AddWithValue("@fecha_creacion", t.fecha_creacion);
+            cmd.Parameters.AddWithValue("@is_ambiente_produccion", t.isAmbienteProduccion);
+            cmd.Parameters.AddWithValue("@id_usuario", t.idUsuario);
+            cmd.Parameters.AddWithValue("@fecha_creacion", t.fechaCreacion);
             return cmd.ExecuteNonQuery();
         }
 

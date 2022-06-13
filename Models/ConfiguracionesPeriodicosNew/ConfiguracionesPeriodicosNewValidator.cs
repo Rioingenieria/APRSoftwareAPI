@@ -11,7 +11,7 @@ namespace Models.ConfiguracionesPeriodicosNew
     {
         public ConfiguracionesPeriodicosNewValidator()
         {
-            RuleFor(Configuraciones => Configuraciones.id_usuario).NotNull().WithMessage("La configucaión no se puede registrar sin el id de usuario.");
+            RuleFor(Configuraciones => Configuraciones.idUsuario).NotNull().WithMessage("La configucaión no se puede registrar sin el id de usuario.");
         }
     }
 }

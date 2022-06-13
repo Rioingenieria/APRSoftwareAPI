@@ -89,7 +89,7 @@ namespace Services.ConfiguracionesPeriodicasNew
                 List<ConfiguracionPeriodicoNew> config = new List<ConfiguracionPeriodicoNew>();
                 config = GetAll();
                 var Result = from ConfiguracionPeriodicoNew in config
-                             where ConfiguracionPeriodicoNew.is_eliminado == false
+                             where ConfiguracionPeriodicoNew.isEliminado == false
                              select ConfiguracionPeriodicoNew;
                 return Result.ToList();
             }
@@ -107,7 +107,7 @@ namespace Services.ConfiguracionesPeriodicasNew
                 List<ConfiguracionPeriodicoNew> config = new List<ConfiguracionPeriodicoNew>();
                 config = GetAll();
                 var Result = from ConfiguracionPeriodicoNew in config
-                             where ConfiguracionPeriodicoNew.is_eliminado == true
+                             where ConfiguracionPeriodicoNew.isEliminado == true
                              select ConfiguracionPeriodicoNew;
                 return Result.ToList();
             }
@@ -200,7 +200,7 @@ namespace Services.ConfiguracionesPeriodicasNew
                 {
                     using (var context = _uniOfWork.Create())
                     {
-                        result = context.Repository.ConfiguracionPeriodicoNewRepository.Remove(_config.id_configuracion_periodico);
+                        result = context.Repository.ConfiguracionPeriodicoNewRepository.Remove(_config.idConfiguracionPeriodico);
                         context.SaveChange();
                     }
                     ValidationResult.Status = Models.Enum.Status.StatusEnum.Ok;

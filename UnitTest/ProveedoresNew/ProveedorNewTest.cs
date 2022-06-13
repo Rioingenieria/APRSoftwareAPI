@@ -22,14 +22,14 @@ namespace UnitTest.ProveedoresNew
             isCorrect = Models.Enum.Status.StatusEnum.Ok;
              _proveedor = new ProveedorNew() 
              {
-             id_proveedor=1,
+             idProveedor=1,
              nombre="1",
              ciudad="1",
              telefono="1",
              email="1",
              descripcion="1",
-             id_dato_facturacion=6,
-             is_eliminado=false
+             idDatoFacturacion=6,
+             isEliminado=false
              };
 
         }
@@ -59,7 +59,7 @@ namespace UnitTest.ProveedoresNew
         public void UpdateIsEliminado()
         {
             ProveedorNewServices proveedorServices = new ProveedorNewServices(unitOfWork);
-            proveedorServices.UpdateIsEliminado(_proveedor.id_proveedor, true);
+            proveedorServices.UpdateIsEliminado(_proveedor.idProveedor, true);
             Assert.AreEqual(isCorrect, proveedorServices.ValidationResult.Status);
         }
         [Test, Order(4)]
@@ -73,8 +73,8 @@ namespace UnitTest.ProveedoresNew
         public void GetById()
         {
             ProveedorNewServices proveedorServices = new ProveedorNewServices(unitOfWork);
-            var ListResult = proveedorServices.GetAll(Models.Enum.GetAll.GetAllEnum.NoEliminados);
-            Assert.IsNotEmpty(ListResult);
+            var Result = proveedorServices.GetById(_proveedor.idProveedor);
+            Assert.IsNotNull(Result);
         }
         [Test, Order(6)]
         public void Update()

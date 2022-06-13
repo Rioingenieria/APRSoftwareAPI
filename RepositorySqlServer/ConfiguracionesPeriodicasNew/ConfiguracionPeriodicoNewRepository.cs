@@ -29,44 +29,44 @@ namespace RepositorySqlServer.ConfiguracionesPeriodicasNew
                 "@exencion_iva,@dias_aviso_corte,@version,@frecuencia_servidor,@periodo_inicio_servidor,@carpeta_megasync,@subsidio_solo_agua,@usuario_megasync,@password_megasync," +
                 "@contar_clientes_subsidio_0,@inicio_tarifa_verano,@fin_tarifa_verano,@color_principal,@color_secundario,@envio_whatsapp,@fecha_creacion," +
                 "@id_usuario,@is_eliminado)");
-            cmd.Parameters.AddWithValue("@años_subsidio", t.años_subsidio);
-            cmd.Parameters.AddWithValue("@meses_subsidio", t.meses_subsidio);
-            cmd.Parameters.AddWithValue("@iva_usuario", t.iva_usuario);
-            cmd.Parameters.AddWithValue("@funcion_escalonada", t.funcion_escalonada);
+            cmd.Parameters.AddWithValue("@años_subsidio", t.añosSubsidio);
+            cmd.Parameters.AddWithValue("@meses_subsidio", t.mesesSubsidio);
+            cmd.Parameters.AddWithValue("@iva_usuario", t.ivaUsuario);
+            cmd.Parameters.AddWithValue("@funcion_escalonada", t.funcionEscalonada);
             cmd.Parameters.AddWithValue("@informacion", t.informacion);
-            cmd.Parameters.AddWithValue("@meses_ctramite", t.meses_ctramite);
-            cmd.Parameters.AddWithValue("@dias_vencimiento", t.dias_vencimiento);
+            cmd.Parameters.AddWithValue("@meses_ctramite", t.mesesCtramite);
+            cmd.Parameters.AddWithValue("@dias_vencimiento", t.diasVencimiento);
             cmd.Parameters.AddWithValue("@subsidio", t.subsidio);
-            cmd.Parameters.AddWithValue("@ultima_boleta", t.ultima_boleta);
-            cmd.Parameters.AddWithValue("@fecha_caducar", t.fecha_caducar);
+            cmd.Parameters.AddWithValue("@ultima_boleta", t.ultimaBoleta);
+            cmd.Parameters.AddWithValue("@fecha_caducar", t.fechaCaducar);
             cmd.Parameters.AddWithValue("@caducado", t.caducado);
-            cmd.Parameters.AddWithValue("@dias_noti", t.dias_noti);
-            cmd.Parameters.AddWithValue("@porcentaje_consumo", t.porcentaje_consumo);
+            cmd.Parameters.AddWithValue("@dias_noti", t.diasNoti);
+            cmd.Parameters.AddWithValue("@porcentaje_consumo", t.porcentajeConsumo);
             cmd.Parameters.AddWithValue("@alcantarillado", t.alcantarillado);
-            cmd.Parameters.AddWithValue("@subsidio_iva", t.subsidio_iva);
-            cmd.Parameters.AddWithValue("@admin_subsidio", t.admin_subsidio);
+            cmd.Parameters.AddWithValue("@subsidio_iva", t.subsidioIva);
+            cmd.Parameters.AddWithValue("@admin_subsidio", t.adminSubsidio);
             cmd.Parameters.AddWithValue("@dte", t.dte);
-            cmd.Parameters.AddWithValue("@caja_vecina", t.caja_vecina);
-            cmd.Parameters.AddWithValue("@app_movil", t.app_movil);
-            cmd.Parameters.AddWithValue("@tramo_subsidio", t.tramo_subsidio);
-            cmd.Parameters.AddWithValue("@tipo_servicio", t.tipo_servicio);
-            cmd.Parameters.AddWithValue("@exencion_iva", t.exencion_iva);
-            cmd.Parameters.AddWithValue("@dias_aviso_corte", t.dias_aviso_corte);
+            cmd.Parameters.AddWithValue("@caja_vecina", t.cajaVecina);
+            cmd.Parameters.AddWithValue("@app_movil", t.appMovil);
+            cmd.Parameters.AddWithValue("@tramo_subsidio", t.tramoSubsidio);
+            cmd.Parameters.AddWithValue("@tipo_servicio", t.tipoServicio);
+            cmd.Parameters.AddWithValue("@exencion_iva", t.exencionIva);
+            cmd.Parameters.AddWithValue("@dias_aviso_corte", t.diasAvisoCorte);
             cmd.Parameters.AddWithValue("@version", t.version);
-            cmd.Parameters.AddWithValue("@frecuencia_servidor", t.frecuencia_servidor);
-            cmd.Parameters.AddWithValue("@periodo_inicio_servidor", t.periodo_inicio_servidor);
-            cmd.Parameters.AddWithValue("@carpeta_megasync", t.carpeta_megasync);
-            cmd.Parameters.AddWithValue("@subsidio_solo_agua", t.subsidio_solo_agua);
-            cmd.Parameters.AddWithValue("@usuario_megasync", t.usuario_megasync);
-            cmd.Parameters.AddWithValue("@password_megasync", t.password_megasync);
-            cmd.Parameters.AddWithValue("@contar_clientes_subsidio_0", t.contar_clientes_subsidio_0);
-            cmd.Parameters.AddWithValue("@inicio_tarifa_verano", t.inicio_tarifa_verano);
-            cmd.Parameters.AddWithValue("@fin_tarifa_verano", t.fin_tarifa_verano);
-            cmd.Parameters.AddWithValue("@color_principal", t.color_principal);
-            cmd.Parameters.AddWithValue("@color_secundario", t.color_secundario);
-            cmd.Parameters.AddWithValue("@envio_whatsapp", t.envio_whatsapp);
-            cmd.Parameters.AddWithValue("@fecha_creacion", t.fecha_creacion);
-            cmd.Parameters.AddWithValue("@id_usuario", t.id_usuario);
+            cmd.Parameters.AddWithValue("@frecuencia_servidor", t.frecuenciaServidor);
+            cmd.Parameters.AddWithValue("@periodo_inicio_servidor", t.periodoInicioServidor);
+            cmd.Parameters.AddWithValue("@carpeta_megasync", t.carpetaMegasync);
+            cmd.Parameters.AddWithValue("@subsidio_solo_agua", t.subsidioSoloAgua);
+            cmd.Parameters.AddWithValue("@usuario_megasync", t.usuarioMegasync);
+            cmd.Parameters.AddWithValue("@password_megasync", t.passwordMegasync);
+            cmd.Parameters.AddWithValue("@contar_clientes_subsidio_0", t.contarClientesSubsidio_0);
+            cmd.Parameters.AddWithValue("@inicio_tarifa_verano", t.inicioTarifaVerano);
+            cmd.Parameters.AddWithValue("@fin_tarifa_verano", t.finTarifaVerano);
+            cmd.Parameters.AddWithValue("@color_principal", t.colorPrincipal);
+            cmd.Parameters.AddWithValue("@color_secundario", t.colorSecundario);
+            cmd.Parameters.AddWithValue("@envio_whatsapp", t.envioWhatsapp);
+            cmd.Parameters.AddWithValue("@fecha_creacion", t.fechaCreacion);
+            cmd.Parameters.AddWithValue("@id_usuario", t.idUsuario);
             cmd.Parameters.AddWithValue("@is_eliminado", false);
             return cmd.ExecuteNonQuery();
         }
@@ -76,45 +76,45 @@ namespace RepositorySqlServer.ConfiguracionesPeriodicasNew
             ConfiguracionPeriodicoNew configuracionPeriodicoNew = new ConfiguracionPeriodicoNew()
             {
                
-                años_subsidio= Convert.ToInt16(dr["años_subsidio"]),
+                añosSubsidio= Convert.ToInt16(dr["años_subsidio"]),
                 alcantarillado= Convert.ToBoolean(dr["alcantarillado"]),
                 caducado= Convert.ToString(dr["caducado"]),
-                carpeta_megasync= Convert.ToString(dr["carpeta_megasync"]),
-                dias_noti=Convert.ToInt16(dr["dias_noti"]),
-                fecha_caducar= Convert.ToDateTime(dr["fecha_caducar"]),
-                fecha_creacion= Convert.ToDateTime(dr["fecha_creacion"]),
-                id_usuario=Convert.ToInt16(dr["id_usuario"]),
+                carpetaMegasync= Convert.ToString(dr["carpeta_megasync"]),
+                diasNoti=Convert.ToInt16(dr["dias_noti"]),
+                fechaCaducar= Convert.ToDateTime(dr["fecha_caducar"]),
+                fechaCreacion= Convert.ToDateTime(dr["fecha_creacion"]),
+                idUsuario=Convert.ToInt16(dr["id_usuario"]),
                 informacion=Convert.ToString(dr["informacion"]),
-                inicio_tarifa_verano=Convert.ToString(dr["inicio_tarifa_verano"]),
-                is_eliminado=Convert.ToBoolean(dr["is_eliminado"]),
-                iva_usuario=Convert.ToBoolean(dr["iva_usuario"]),
-                meses_ctramite=Convert.ToInt16(dr["meses_ctramite"]),
-                porcentaje_consumo=Convert.ToInt16(dr["porcentaje_consumo"]),
+                inicioTarifaVerano=Convert.ToString(dr["inicio_tarifa_verano"]),
+                isEliminado=Convert.ToBoolean(dr["is_eliminado"]),
+                ivaUsuario=Convert.ToBoolean(dr["iva_usuario"]),
+                mesesCtramite=Convert.ToInt16(dr["meses_ctramite"]),
+                porcentajeConsumo=Convert.ToInt16(dr["porcentaje_consumo"]),
                 subsidio=Convert.ToInt16(dr["subsidio"]),
-                ultima_boleta=Convert.ToBoolean(dr["ultima_boleta"]),
-                subsidio_iva = Convert.ToBoolean(dr["subsidio_iva"]),
-                admin_subsidio = Convert.ToBoolean(dr["admin_subsidio"]),
+                ultimaBoleta=Convert.ToBoolean(dr["ultima_boleta"]),
+                subsidioIva = Convert.ToBoolean(dr["subsidio_iva"]),
+                adminSubsidio = Convert.ToBoolean(dr["admin_subsidio"]),
                 dte = Convert.ToString(dr["dte"]),
-                caja_vecina = Convert.ToString(dr["caja_vecina"]),
-                envio_whatsapp = Convert.ToString(dr["envio_whatsapp"]),
-                color_secundario = Convert.ToInt32(dr["color_secundario"]),
-                color_principal = Convert.ToInt32(dr["color_principal"]),
-                fin_tarifa_verano = Convert.ToString(dr["fin_tarifa_verano"]),
-                contar_clientes_subsidio_0 = Convert.ToBoolean(dr["contar_clientes_subsidio_0"]),
-                password_megasync = Convert.ToString(dr["password_megasync"]),
-                usuario_megasync = Convert.ToString(dr["usuario_megasync"]),
-                subsidio_solo_agua = Convert.ToBoolean(dr["subsidio_solo_agua"]),
-                periodo_inicio_servidor = Convert.ToDateTime(dr["periodo_inicio_servidor"]),
-                frecuencia_servidor = Convert.ToInt32(dr["frecuencia_servidor"]),
+                cajaVecina = Convert.ToString(dr["caja_vecina"]),
+                envioWhatsapp = Convert.ToString(dr["envio_whatsapp"]),
+                colorSecundario = Convert.ToInt32(dr["color_secundario"]),
+                colorPrincipal = Convert.ToInt32(dr["color_principal"]),
+                finTarifaVerano = Convert.ToString(dr["fin_tarifa_verano"]),
+                contarClientesSubsidio_0 = Convert.ToBoolean(dr["contar_clientes_subsidio_0"]),
+                passwordMegasync = Convert.ToString(dr["password_megasync"]),
+                usuarioMegasync = Convert.ToString(dr["usuario_megasync"]),
+                subsidioSoloAgua = Convert.ToBoolean(dr["subsidio_solo_agua"]),
+                periodoInicioServidor = Convert.ToDateTime(dr["periodo_inicio_servidor"]),
+                frecuenciaServidor = Convert.ToInt32(dr["frecuencia_servidor"]),
                 version = Convert.ToString(dr["version"]),
-                dias_aviso_corte = Convert.ToInt32(dr["dias_aviso_corte"]),
-                exencion_iva = Convert.ToBoolean(dr["exencion_iva"]),
-                tipo_servicio = Convert.ToInt32(dr["tipo_servicio"]),
-                tramo_subsidio = Convert.ToBoolean(dr["tramo_subsidio"]),
-                app_movil = Convert.ToBoolean(dr["app_movil"]),
-                dias_vencimiento= Convert.ToInt32(dr["dias_vencimiento"]),
-                funcion_escalonada= Convert.ToBoolean(dr["funcion_escalonada"]),
-                meses_subsidio= Convert.ToInt32(dr["meses_subsidio"]),
+                diasAvisoCorte = Convert.ToInt32(dr["dias_aviso_corte"]),
+                exencionIva = Convert.ToBoolean(dr["exencion_iva"]),
+                tipoServicio = Convert.ToInt32(dr["tipo_servicio"]),
+                tramoSubsidio = Convert.ToBoolean(dr["tramo_subsidio"]),
+                appMovil = Convert.ToBoolean(dr["app_movil"]),
+                diasVencimiento= Convert.ToInt32(dr["dias_vencimiento"]),
+                funcionEscalonada= Convert.ToBoolean(dr["funcion_escalonada"]),
+                mesesSubsidio= Convert.ToInt32(dr["meses_subsidio"]),
             };
             return configuracionPeriodicoNew;
         }
@@ -160,45 +160,45 @@ namespace RepositorySqlServer.ConfiguracionesPeriodicasNew
                 "contar_clientes_subsidio_0=@contar_clientes_subsidio_0,inicio_tarifa_verano=@inicio_tarifa_verano,fin_tarifa_verano=@fin_tarifa_verano,color_principal=@color_principal," +
                 "color_secundario=@color_secundario,envio_whatsapp=@envio_whatsapp,fecha_creacion=@fecha_creacion,id_usuario=@id_usuario " +
                 "WHERE id_configuracion_periodico=@id_configuracion_periodico");
-            cmd.Parameters.AddWithValue("@id_configuracion_periodico", t.id_configuracion_periodico);
-            cmd.Parameters.AddWithValue("@años_subsidio", t.años_subsidio);
-            cmd.Parameters.AddWithValue("@meses_subsidio", t.meses_subsidio);
-            cmd.Parameters.AddWithValue("@iva_usuario", t.iva_usuario);
-            cmd.Parameters.AddWithValue("@funcion_escalonada", t.funcion_escalonada);
+            cmd.Parameters.AddWithValue("@id_configuracion_periodico", t.idConfiguracionPeriodico);
+            cmd.Parameters.AddWithValue("@años_subsidio", t.añosSubsidio);
+            cmd.Parameters.AddWithValue("@meses_subsidio", t.mesesSubsidio);
+            cmd.Parameters.AddWithValue("@iva_usuario", t.ivaUsuario);
+            cmd.Parameters.AddWithValue("@funcion_escalonada", t.funcionEscalonada);
             cmd.Parameters.AddWithValue("@informacion", t.informacion);
-            cmd.Parameters.AddWithValue("@meses_ctramite", t.meses_ctramite);
-            cmd.Parameters.AddWithValue("@dias_vencimiento", t.dias_vencimiento);
+            cmd.Parameters.AddWithValue("@meses_ctramite", t.mesesCtramite);
+            cmd.Parameters.AddWithValue("@dias_vencimiento", t.diasVencimiento);
             cmd.Parameters.AddWithValue("@subsidio", t.subsidio);
-            cmd.Parameters.AddWithValue("@ultima_boleta", t.ultima_boleta);
-            cmd.Parameters.AddWithValue("@fecha_caducar", t.fecha_caducar);
+            cmd.Parameters.AddWithValue("@ultima_boleta", t.ultimaBoleta);
+            cmd.Parameters.AddWithValue("@fecha_caducar", t.fechaCaducar);
             cmd.Parameters.AddWithValue("@caducado", t.caducado);
-            cmd.Parameters.AddWithValue("@dias_noti", t.dias_noti);
-            cmd.Parameters.AddWithValue("@porcentaje_consumo", t.porcentaje_consumo);
+            cmd.Parameters.AddWithValue("@dias_noti", t.diasNoti);
+            cmd.Parameters.AddWithValue("@porcentaje_consumo", t.porcentajeConsumo);
             cmd.Parameters.AddWithValue("@alcantarillado", t.alcantarillado);
-            cmd.Parameters.AddWithValue("@subsidio_iva", t.subsidio_iva);
-            cmd.Parameters.AddWithValue("@admin_subsidio", t.admin_subsidio);
+            cmd.Parameters.AddWithValue("@subsidio_iva", t.subsidioIva);
+            cmd.Parameters.AddWithValue("@admin_subsidio", t.adminSubsidio);
             cmd.Parameters.AddWithValue("@dte", t.dte);
-            cmd.Parameters.AddWithValue("@caja_vecina", t.caja_vecina);
-            cmd.Parameters.AddWithValue("@app_movil", t.app_movil);
-            cmd.Parameters.AddWithValue("@tramo_subsidio", t.tramo_subsidio);
-            cmd.Parameters.AddWithValue("@tipo_servicio", t.tipo_servicio);
-            cmd.Parameters.AddWithValue("@exencion_iva", t.exencion_iva);
-            cmd.Parameters.AddWithValue("@dias_aviso_corte", t.dias_aviso_corte);
+            cmd.Parameters.AddWithValue("@caja_vecina", t.cajaVecina);
+            cmd.Parameters.AddWithValue("@app_movil", t.appMovil);
+            cmd.Parameters.AddWithValue("@tramo_subsidio", t.tramoSubsidio);
+            cmd.Parameters.AddWithValue("@tipo_servicio", t.tipoServicio);
+            cmd.Parameters.AddWithValue("@exencion_iva", t.exencionIva);
+            cmd.Parameters.AddWithValue("@dias_aviso_corte", t.diasAvisoCorte);
             cmd.Parameters.AddWithValue("@version", t.version);
-            cmd.Parameters.AddWithValue("@frecuencia_servidor", t.frecuencia_servidor);
-            cmd.Parameters.AddWithValue("@periodo_inicio_servidor", t.periodo_inicio_servidor);
-            cmd.Parameters.AddWithValue("@carpeta_megasync", t.carpeta_megasync);
-            cmd.Parameters.AddWithValue("@subsidio_solo_agua", t.subsidio_solo_agua);
-            cmd.Parameters.AddWithValue("@usuario_megasync", t.usuario_megasync);
-            cmd.Parameters.AddWithValue("@password_megasync", t.password_megasync);
-            cmd.Parameters.AddWithValue("@contar_clientes_subsidio_0", t.contar_clientes_subsidio_0);
-            cmd.Parameters.AddWithValue("@inicio_tarifa_verano", t.inicio_tarifa_verano);
-            cmd.Parameters.AddWithValue("@fin_tarifa_verano", t.fin_tarifa_verano);
-            cmd.Parameters.AddWithValue("@color_principal", t.color_principal);
-            cmd.Parameters.AddWithValue("@color_secundario", t.color_secundario);
-            cmd.Parameters.AddWithValue("@envio_whatsapp", t.envio_whatsapp);
-            cmd.Parameters.AddWithValue("@fecha_creacion", t.fecha_creacion);
-            cmd.Parameters.AddWithValue("@id_usuario", t.id_usuario);
+            cmd.Parameters.AddWithValue("@frecuencia_servidor", t.frecuenciaServidor);
+            cmd.Parameters.AddWithValue("@periodo_inicio_servidor", t.periodoInicioServidor);
+            cmd.Parameters.AddWithValue("@carpeta_megasync", t.carpetaMegasync);
+            cmd.Parameters.AddWithValue("@subsidio_solo_agua", t.subsidioSoloAgua);
+            cmd.Parameters.AddWithValue("@usuario_megasync", t.usuarioMegasync);
+            cmd.Parameters.AddWithValue("@password_megasync", t.passwordMegasync);
+            cmd.Parameters.AddWithValue("@contar_clientes_subsidio_0", t.contarClientesSubsidio_0);
+            cmd.Parameters.AddWithValue("@inicio_tarifa_verano", t.inicioTarifaVerano);
+            cmd.Parameters.AddWithValue("@fin_tarifa_verano", t.finTarifaVerano);
+            cmd.Parameters.AddWithValue("@color_principal", t.colorPrincipal);
+            cmd.Parameters.AddWithValue("@color_secundario", t.colorSecundario);
+            cmd.Parameters.AddWithValue("@envio_whatsapp", t.envioWhatsapp);
+            cmd.Parameters.AddWithValue("@fecha_creacion", t.fechaCreacion);
+            cmd.Parameters.AddWithValue("@id_usuario", t.idUsuario);
             return cmd.ExecuteNonQuery();
         }
 

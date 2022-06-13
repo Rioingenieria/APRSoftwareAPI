@@ -24,8 +24,8 @@ namespace RepositorySqlServer.ProductosCategoriasNew
             cmd.Parameters.AddWithValue("@nombre", t.nombre);
             cmd.Parameters.AddWithValue("@descripcion",t.descripcion);
             cmd.Parameters.AddWithValue("@is_eliminado",false);
-            cmd.Parameters.AddWithValue("@id_usuario",t.id_usuario);
-            cmd.Parameters.AddWithValue("@fecha_creacion",t.fecha_creacion);
+            cmd.Parameters.AddWithValue("@id_usuario",t.idUsuario);
+            cmd.Parameters.AddWithValue("@fecha_creacion",t.fechaCreacion);
             return cmd.ExecuteNonQuery();
         }
 
@@ -33,12 +33,12 @@ namespace RepositorySqlServer.ProductosCategoriasNew
         {
             ProductoCategoriaNew productoCategoria=new ProductoCategoriaNew() 
             {
-            id_producto_categoria=Convert.ToInt16(dr["id_producto_categoria"]),
+            idProductoCategoria=Convert.ToInt16(dr["id_producto_categoria"]),
             nombre=Convert.ToString(dr["nombre"]),
             descripcion=Convert.ToString(dr["descripcion"]),
-            is_eliminado=Convert.ToBoolean(dr["is_eliminado"]),
-            id_usuario=Convert.ToInt16(dr["id_usuario"]),
-            fecha_creacion=Convert.ToDateTime(dr["fecha_creacion"])
+            isEliminado=Convert.ToBoolean(dr["is_eliminado"]),
+            idUsuario=Convert.ToInt16(dr["id_usuario"]),
+            fechaCreacion=Convert.ToDateTime(dr["fecha_creacion"])
             };
             return productoCategoria;
         }
@@ -74,12 +74,12 @@ namespace RepositorySqlServer.ProductosCategoriasNew
             var cmd = CreateCommand("UPDATE productos_categorias_new SET nombre=@nombre,descripcion=@descripcion" +
                 ",is_eliminado=@is_eliminado,id_usuario=@id_usuario,fecha_creacion=@fecha_creacion " +
                 "WHERE id_producto_categoria=@id_producto_categoria");
-            cmd.Parameters.AddWithValue("@id_producto_categoria", t.id_producto_categoria);
+            cmd.Parameters.AddWithValue("@id_producto_categoria", t.idProductoCategoria);
             cmd.Parameters.AddWithValue("@nombre", t.nombre);
             cmd.Parameters.AddWithValue("@descripcion", t.descripcion);
-            cmd.Parameters.AddWithValue("@is_eliminado", t.is_eliminado);
-            cmd.Parameters.AddWithValue("@id_usuario", t.id_usuario);
-            cmd.Parameters.AddWithValue("@fecha_creacion", t.fecha_creacion);
+            cmd.Parameters.AddWithValue("@is_eliminado", t.isEliminado);
+            cmd.Parameters.AddWithValue("@id_usuario", t.idUsuario);
+            cmd.Parameters.AddWithValue("@fecha_creacion", t.fechaCreacion);
             return cmd.ExecuteNonQuery();
         }
 

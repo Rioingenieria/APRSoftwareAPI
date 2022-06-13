@@ -117,7 +117,7 @@ namespace Services.ProductosCategoriasNew
                 List<ProductoCategoriaNew> ProductCategoriaList = new List<ProductoCategoriaNew>();
                 ProductCategoriaList = GetAll();
                 var Result = from ProductoCategoriaNew in ProductCategoriaList
-                             where ProductoCategoriaNew.is_eliminado == false
+                             where ProductoCategoriaNew.isEliminado == false
                              select ProductoCategoriaNew;
                 return Result.ToList();
             }
@@ -139,7 +139,7 @@ namespace Services.ProductosCategoriasNew
                 List<ProductoCategoriaNew> ProductCategoriaList = new List<ProductoCategoriaNew>();
                 ProductCategoriaList = GetAll();
                 var Result = from ProductoCategoriaNew in ProductCategoriaList
-                             where ProductoCategoriaNew.is_eliminado == true
+                             where ProductoCategoriaNew.isEliminado == true
                              select ProductoCategoriaNew;
                 return Result.ToList();
             }
@@ -235,7 +235,7 @@ namespace Services.ProductosCategoriasNew
                 {
                     using (var context = _uniOfWork.Create())
                     {
-                        result = context.Repository.ProductoCategoriaNewRepository.Remove(_productoCategoriaNew.id_producto_categoria);
+                        result = context.Repository.ProductoCategoriaNewRepository.Remove(_productoCategoriaNew.idProductoCategoria);
                         context.SaveChange();
                     }
                     if (result > 0) { ValidationResult.Status = Models.Enum.Status.StatusEnum.Ok; }

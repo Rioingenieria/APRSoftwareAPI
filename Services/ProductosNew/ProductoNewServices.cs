@@ -117,7 +117,7 @@ namespace Services.ProductosNew
                 List<ProductoNew> ProductList = new List<ProductoNew>();
                 ProductList = GetAll();
                 var Result = from ProductoNew in ProductList
-                             where ProductoNew.is_eliminado == false
+                             where ProductoNew.isEliminado == false
                              select ProductoNew;
                 return Result.ToList();
             }
@@ -139,7 +139,7 @@ namespace Services.ProductosNew
                 List<ProductoNew> ProductList = new List<ProductoNew>();
                 ProductList = GetAll();
                 var Result = from ProductoNew in ProductList
-                             where ProductoNew.is_eliminado == true
+                             where ProductoNew.isEliminado == true
                              select ProductoNew;
                 return Result.ToList();
             }
@@ -237,7 +237,7 @@ namespace Services.ProductosNew
                 {
                     using (var context = _uniOfWork.Create())
                     {
-                        result = context.Repository.ProductoNewRepository.Remove(_productoNew.id_producto);
+                        result = context.Repository.ProductoNewRepository.Remove(_productoNew.idProducto);
                         context.SaveChange();
                     }
                     if (result > 0) { ValidationResult.Status = Models.Enum.Status.StatusEnum.Ok; }

@@ -91,7 +91,7 @@ namespace Services.ConfiguracionesGlobales
                 List<ConfiguracionGlobal> config = new List<ConfiguracionGlobal>();
                 config = GetAll();
                 var Result = from ConfiguracionGlobal in config
-                             where ConfiguracionGlobal.is_eliminado == false
+                             where ConfiguracionGlobal.isEliminado == false
                              select ConfiguracionGlobal;
                 return Result.ToList();
             }
@@ -109,7 +109,7 @@ namespace Services.ConfiguracionesGlobales
                 List<ConfiguracionGlobal> config = new List<ConfiguracionGlobal>();
                 config = GetAll();
                 var Result = from ConfiguracionGlobal in config
-                             where ConfiguracionGlobal.is_eliminado == true
+                             where ConfiguracionGlobal.isEliminado == true
                              select ConfiguracionGlobal;
                 return Result.ToList();
             }
@@ -202,7 +202,7 @@ namespace Services.ConfiguracionesGlobales
                 {
                     using (var context = _uniOfWork.Create())
                     {
-                        result = context.Repository.ConfiguracionGlobalRepository.Remove(_config.id_configuracion);
+                        result = context.Repository.ConfiguracionGlobalRepository.Remove(_config.idConfiguracion);
                         context.SaveChange();
                     }
                     ValidationResult.Status = Models.Enum.Status.StatusEnum.Ok;

@@ -117,7 +117,7 @@ namespace Services.ProveedoresNew
                 List<ProveedorNew> proveedorList = new List<ProveedorNew>();
                 proveedorList = GetAll();
                 var Result = from ProveedorNew in proveedorList
-                             where ProveedorNew.is_eliminado == false
+                             where ProveedorNew.isEliminado == false
                              select ProveedorNew;
                 return Result.ToList();
             }
@@ -139,7 +139,7 @@ namespace Services.ProveedoresNew
                 List<ProveedorNew> proveedorList = new List<ProveedorNew>();
                 proveedorList = GetAll();
                 var Result = from ProveedorNew in proveedorList
-                             where ProveedorNew.is_eliminado == true
+                             where ProveedorNew.isEliminado == true
                              select ProveedorNew;
                 return Result.ToList();
             }
@@ -235,7 +235,7 @@ namespace Services.ProveedoresNew
                 {
                     using (var context = _uniOfWork.Create())
                     {
-                        result = context.Repository.ProveedorNewRepository.Remove(_ProveedorNew.id_proveedor);
+                        result = context.Repository.ProveedorNewRepository.Remove(_ProveedorNew.idProveedor);
                         context.SaveChange();
                     }
                     if (result > 0) { ValidationResult.Status = Models.Enum.Status.StatusEnum.Ok; }

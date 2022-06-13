@@ -26,7 +26,7 @@ namespace RepositorySqlServer.ProveedoresNew
             cmd.Parameters.AddWithValue("@telefono", t.telefono);
             cmd.Parameters.AddWithValue("@email", t.email);
             cmd.Parameters.AddWithValue("@descripcion", t.descripcion);
-            cmd.Parameters.AddWithValue("@id_dato_facturacion", t.id_dato_facturacion);
+            cmd.Parameters.AddWithValue("@id_dato_facturacion", t.idDatoFacturacion);
             cmd.Parameters.AddWithValue("@is_eliminado", false);
             return cmd.ExecuteNonQuery();
         }
@@ -35,14 +35,14 @@ namespace RepositorySqlServer.ProveedoresNew
         {
             ProveedorNew proveedorNew = new ProveedorNew() 
             {
-                id_proveedor=Convert.ToInt32(dr["id_proveedor"]),
+                idProveedor=Convert.ToInt32(dr["id_proveedor"]),
                 nombre=Convert.ToString(dr["nombre"]),
                 ciudad=Convert.ToString(dr["ciudad"]),
                 telefono=Convert.ToString(dr["telefono"]),
                 email=Convert.ToString(dr["email"]),
                 descripcion=Convert.ToString(dr["descripcion"]),
-                id_dato_facturacion=Convert.ToInt32(dr["id_dato_facturacion"]),
-                is_eliminado=Convert.ToBoolean(dr["is_eliminado"]),
+                idDatoFacturacion=Convert.ToInt32(dr["id_dato_facturacion"]),
+                isEliminado=Convert.ToBoolean(dr["is_eliminado"]),
             };
             return proveedorNew;
         }
@@ -78,14 +78,14 @@ namespace RepositorySqlServer.ProveedoresNew
             var cmd = CreateCommand("UPDATE proveedores_new SET nombre=@nombre,ciudad=@ciudad,telefono=@telefono," +
                 "email=@email,descripcion=@descripcion,id_dato_facturacion=@id_dato_facturacion,is_eliminado=@is_eliminado" +
                 " WHERE id_proveedor=@id_proveedor");
-            cmd.Parameters.AddWithValue("@id_proveedor", t.id_proveedor);
+            cmd.Parameters.AddWithValue("@id_proveedor", t.idProveedor);
             cmd.Parameters.AddWithValue("@nombre", t.nombre);
             cmd.Parameters.AddWithValue("@ciudad", t.ciudad);
             cmd.Parameters.AddWithValue("@telefono", t.telefono);
             cmd.Parameters.AddWithValue("@email", t.email);
             cmd.Parameters.AddWithValue("@descripcion", t.descripcion);
-            cmd.Parameters.AddWithValue("@id_dato_facturacion", t.id_dato_facturacion);
-            cmd.Parameters.AddWithValue("@is_eliminado", t.is_eliminado);
+            cmd.Parameters.AddWithValue("@id_dato_facturacion", t.idDatoFacturacion);
+            cmd.Parameters.AddWithValue("@is_eliminado", t.isEliminado);
             return cmd.ExecuteNonQuery();
         }
 

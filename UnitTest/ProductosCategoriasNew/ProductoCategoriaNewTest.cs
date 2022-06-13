@@ -19,12 +19,12 @@ namespace UnitTest.ProductosCategoriasNew
             isCorrect = Models.Enum.Status.StatusEnum.Ok;
             _productoCategoria=new ProductoCategoriaNew() 
             { 
-            id_producto_categoria=1,
+            idProductoCategoria=1,
             nombre="1",
             descripcion="1",
-            is_eliminado=false,
-            id_usuario=1,
-            fecha_creacion=DateTime.Now
+            isEliminado=false,
+            idUsuario=1,
+            fechaCreacion=DateTime.Now
             };
         }
         [Test,Order (0)]
@@ -57,7 +57,7 @@ namespace UnitTest.ProductosCategoriasNew
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             ProductoCategoriaNewServices productoServices = new ProductoCategoriaNewServices(unitOfWork);
-            productoServices.UpdateIsEliminado(_productoCategoria.id_producto_categoria, true);
+            productoServices.UpdateIsEliminado(_productoCategoria.idProductoCategoria, true);
             Assert.AreEqual(isCorrect, productoServices.ValidationResult.Status);
         }
         [Test, Order(4)]
@@ -73,7 +73,7 @@ namespace UnitTest.ProductosCategoriasNew
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             ProductoCategoriaNewServices productoServices = new ProductoCategoriaNewServices(unitOfWork);
-            var Result = productoServices.GetById(_productoCategoria.id_producto_categoria);
+            var Result = productoServices.GetById(_productoCategoria.idProductoCategoria);
             Assert.IsNotNull(Result);
         }
         [Test, Order(6)]

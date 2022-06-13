@@ -15,19 +15,19 @@ namespace Models.ProductosCategoriasNew
         private int _id_usuario;
         private DateTime _fecha_creacion;
 
-        public DateTime fecha_creacion
+        public DateTime fechaCreacion
         {
             get { return _fecha_creacion; }
             set { _fecha_creacion = value; }
         }
 
-        public int id_usuario
+        public int idUsuario
         {
             get { return _id_usuario; }
             set { _id_usuario = value; }
         }
 
-        public Boolean is_eliminado
+        public Boolean isEliminado
         {
             get { return _is_eliminado; }
             set { _is_eliminado = value; }
@@ -45,7 +45,7 @@ namespace Models.ProductosCategoriasNew
             set { _nombre = value; }
         }
 
-        public int id_producto_categoria
+        public int idProductoCategoria
         {
             get { return _id_producto_categoria; }
             set { _id_producto_categoria = value; }

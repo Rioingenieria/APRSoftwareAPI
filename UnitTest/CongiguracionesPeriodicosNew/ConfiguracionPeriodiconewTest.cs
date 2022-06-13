@@ -18,46 +18,46 @@ namespace UnitTest.CongiguracionesPeriodicosNew
             isCorrect = Models.Enum.Status.StatusEnum.Ok;
             Config = new ConfiguracionPeriodicoNew()
             {
-                id_configuracion_periodico = 1,
-               admin_subsidio = true,
-                is_eliminado = false,
-                id_usuario = 1,
-                fecha_creacion = System.DateTime.Now,
+                idConfiguracionPeriodico = 1,
+               adminSubsidio = true,
+                isEliminado = false,
+                idUsuario = 1,
+                fechaCreacion = System.DateTime.Now,
                 alcantarillado = false,
-                app_movil=true,
-                años_subsidio=1,
+                appMovil=true,
+                añosSubsidio=1,
                 caducado="1",
-                caja_vecina="1",
-                carpeta_megasync="1",
-                color_principal=1,
-                color_secundario=1,
-                contar_clientes_subsidio_0=true,
-                dias_aviso_corte=1,
-                dias_noti=1,
+                cajaVecina="1",
+                carpetaMegasync="1",
+                colorPrincipal=1,
+                colorSecundario=1,
+                contarClientesSubsidio_0=true,
+                diasAvisoCorte=1,
+                diasNoti=1,
                 dte="1",
-                envio_whatsapp="1",
-                exencion_iva=true,
-                fecha_caducar=System.DateTime.Now,
-                fin_tarifa_verano="1",
-                frecuencia_servidor=1,
+                envioWhatsapp="1",
+                exencionIva=true,
+                fechaCaducar=System.DateTime.Now,
+                finTarifaVerano="1",
+                frecuenciaServidor=1,
                 informacion="1",
-                inicio_tarifa_verano="1",
-                iva_usuario=true,
-                meses_ctramite=1,
-                password_megasync="1",  
-                periodo_inicio_servidor=System.DateTime.Now,
-                porcentaje_consumo=1,   
+                inicioTarifaVerano="1",
+                ivaUsuario=true,
+                mesesCtramite=1,
+                passwordMegasync="1",  
+                periodoInicioServidor=System.DateTime.Now,
+                porcentajeConsumo=1,   
                 subsidio=1,
-                subsidio_iva=true,
-                subsidio_solo_agua=true,
-                tipo_servicio=1,
-                tramo_subsidio=true,
-                ultima_boleta=true,
-                usuario_megasync="1",
+                subsidioIva=true,
+                subsidioSoloAgua=true,
+                tipoServicio=1,
+                tramoSubsidio=true,
+                ultimaBoleta=true,
+                usuarioMegasync="1",
                 version="1",
-                dias_vencimiento=1,
-                funcion_escalonada=true,
-                meses_subsidio=1
+                diasVencimiento=1,
+                funcionEscalonada=true,
+                mesesSubsidio=1
                 
             };
         }
@@ -84,7 +84,7 @@ namespace UnitTest.CongiguracionesPeriodicosNew
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             ConfiguracionPeriodicaNewServices config = new ConfiguracionPeriodicaNewServices(unitOfWork);
-            config.UpdateIsEliminado(Config.id_configuracion_periodico, true);
+            config.UpdateIsEliminado(Config.idConfiguracionPeriodico, true);
             Console.WriteLine(config.ValidationResult.Message.ToString());
             Assert.AreEqual(isCorrect, config.ValidationResult.Status);
         }
@@ -109,7 +109,7 @@ namespace UnitTest.CongiguracionesPeriodicosNew
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             ConfiguracionPeriodicaNewServices config = new ConfiguracionPeriodicaNewServices(unitOfWork);
-            var Result = config.GetById(Config.id_configuracion_periodico);
+            var Result = config.GetById(Config.idConfiguracionPeriodico);
             Assert.IsNotNull(Result);
         }
         [Test]

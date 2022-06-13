@@ -11,7 +11,7 @@ namespace Models.ProveedoresNew
     {
         public ProveedorNewValidator()
         {
-            RuleFor(ProveedorNew => ProveedorNew.id_dato_facturacion).NotNull().NotEmpty().WithMessage("El proveedor no se puede registrar sin identificador de factura.");
+            RuleFor(ProveedorNew => ProveedorNew.idDatoFacturacion).NotNull().NotEmpty().WithMessage("El proveedor no se puede registrar sin identificador de factura.");
             RuleFor(ProveedorNew => ProveedorNew.telefono).NotNull().NotEmpty().WithMessage("El proveedor no se puede registrar sin numero de telefono.");
             RuleFor(ProveedorNew => ProveedorNew.nombre).NotNull().NotEmpty().WithMessage("El proveedor no se puede registrar sin nombre.");
         }

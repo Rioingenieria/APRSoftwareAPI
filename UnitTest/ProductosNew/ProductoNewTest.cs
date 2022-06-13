@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Models.ProductosNew;
+using NUnit.Framework;
 using Services.ProductosNew;
 using System;
 using System.Collections.Generic;
@@ -6,34 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnitTest.ProductoNew
+namespace UnitTest.ProductosNew
 {
     public class ProductoNewTest
     {
         private Models.Enum.Status.StatusEnum isCorrect;
-        private Models.ProductosNew.ProductoNew _producto;
+        private ProductoNew _producto;
         [SetUp]
         public void Setup()
         { 
             isCorrect = Models.Enum.Status.StatusEnum.Ok;
             _producto = new Models.ProductosNew.ProductoNew() 
             {
-            id_producto=5,
+            idProducto=1,
             nombre="1",
             descripcion="1",
             existencia=1,
             precio=1,
             codigo="1",
             costo=1,
-            unidad_medida_estado=1,
-            id_usuario=1,
-            fecha_creacion=DateTime.Now,
-            is_eliminado=false,
+            unidadMedidaEstado=1,
+            idUsuario=1,
+            fechaCreacion=DateTime.Now,
+            isEliminado=false,
             sku="1",
-            id_proveedor=5,
-            id_bodega=1,
-            id_categoria_producto=1,
-            id_estado_estado=1
+            idProveedor=5,
+            idBodega=1,
+            idCategoriaProducto=1,
+            idEstadoEstado=1
             };
         
         }
@@ -67,7 +68,7 @@ namespace UnitTest.ProductoNew
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             ProductoNewServices productoServices = new ProductoNewServices(unitOfWork);
-            productoServices.UpdateIsEliminado(_producto.id_producto, true);
+            productoServices.UpdateIsEliminado(_producto.idProducto, true);
             Assert.AreEqual(isCorrect, productoServices.ValidationResult.Status);
         }
         [Test, Order(4)]
@@ -83,7 +84,7 @@ namespace UnitTest.ProductoNew
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             ProductoNewServices productoServices = new ProductoNewServices(unitOfWork);
-            var ListResult = productoServices.GetById(_producto.id_producto);
+            var ListResult = productoServices.GetById(_producto.idProducto);
             Assert.IsNotNull(ListResult);
         }
         [Test, Order(6)]

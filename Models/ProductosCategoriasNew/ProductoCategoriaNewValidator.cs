@@ -11,7 +11,7 @@ namespace Models.ProductosCategoriasNew
     {
         public ProductoCategoriaNewValidator()
         {
-            RuleFor(ProductoCategoriaNew => ProductoCategoriaNew.id_usuario).NotNull().NotEmpty().WithMessage("El producto categoria no se puede registrar sin identificador de usuario.");
+            RuleFor(ProductoCategoriaNew => ProductoCategoriaNew.idUsuario).NotNull().NotEmpty().WithMessage("El producto categoria no se puede registrar sin identificador de usuario.");
             RuleFor(ProductoCategoriaNew => ProductoCategoriaNew.nombre).NotNull().NotEmpty().WithMessage("El producto categoria no se puede registrar sin nombre.");
 
         }
