@@ -34,67 +34,67 @@ namespace UnitTest.RedesNew
         public void Create()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            RedNewServices matrizServices = new RedNewServices(unitOfWork);
-            matrizServices.Create(_red);
-            Console.WriteLine(matrizServices.ValidationResult.Message.ToString());
-            Assert.AreEqual(isCorrect, matrizServices.ValidationResult.Status);
+            RedNewServices redServices = new RedNewServices(unitOfWork);
+            redServices.Create(_red);
+            Console.WriteLine(redServices.ValidationResult.Message.ToString());
+            Assert.AreEqual(isCorrect, redServices.ValidationResult.Status);
         }
         [Test, Order(1)]
         public void GetAll()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            RedNewServices matrizServices = new RedNewServices(unitOfWork);
-            var ListResult = matrizServices.GetAll(Models.Enum.GetAll.GetAllEnum.Todos);
+            RedNewServices redServices = new RedNewServices(unitOfWork);
+            var ListResult = redServices.GetAll(Models.Enum.GetAll.GetAllEnum.Todos);
             Assert.IsNotEmpty(ListResult);
         }
         [Test, Order(2)]
         public void GetAllNoEliminados()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            RedNewServices matrizServices = new RedNewServices(unitOfWork);
-            var ListResult = matrizServices.GetAll(Models.Enum.GetAll.GetAllEnum.NoEliminados);
+            RedNewServices redServices = new RedNewServices(unitOfWork);
+            var ListResult = redServices.GetAll(Models.Enum.GetAll.GetAllEnum.NoEliminados);
             Assert.IsNotEmpty(ListResult);
         }
         [Test, Order(3)]
         public void UpdateIsEliminado()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            RedNewServices matrizServices = new RedNewServices(unitOfWork);
-            matrizServices.UpdateIsEliminado(_red.idRed, true);
-            Assert.AreEqual(isCorrect, matrizServices.ValidationResult.Status);
+            RedNewServices redServices = new RedNewServices(unitOfWork);
+            redServices.UpdateIsEliminado(_red.idRed, true);
+            Assert.AreEqual(isCorrect, redServices.ValidationResult.Status);
         }
         [Test, Order(4)]
         public void GetAllEliminados()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            RedNewServices matrizServices = new RedNewServices(unitOfWork);
-            var ListResult = matrizServices.GetAll(Models.Enum.GetAll.GetAllEnum.Eliminados);
+            RedNewServices redServices = new RedNewServices(unitOfWork);
+            var ListResult = redServices.GetAll(Models.Enum.GetAll.GetAllEnum.Eliminados);
             Assert.IsNotEmpty(ListResult);
         }
         [Test, Order(5)]
         public void GetById()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            RedNewServices matrizServices = new RedNewServices(unitOfWork);
-            var Result = matrizServices.GetById(_red.idRed);
+            RedNewServices redServices = new RedNewServices(unitOfWork);
+            var Result = redServices.GetById(_red.idRed);
             Assert.IsNotNull(Result);
         }
         [Test, Order(6)]
         public void Update()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            RedNewServices matrizServices = new RedNewServices(unitOfWork);
-            matrizServices.Update(_red);
-            Console.WriteLine(matrizServices.ValidationResult.Message.ToString());
-            Assert.AreEqual(isCorrect, matrizServices.ValidationResult.Status);
+            RedNewServices redServices = new RedNewServices(unitOfWork);
+            redServices.Update(_red);
+            Console.WriteLine(redServices.ValidationResult.Message.ToString());
+            Assert.AreEqual(isCorrect, redServices.ValidationResult.Status);
         }
         [Test, Order(7)]
         public void Remove()
         {
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
-            RedNewServices matrizServices = new RedNewServices(unitOfWork);
-            matrizServices.Remove(_red);
-            Assert.AreEqual(isCorrect, matrizServices.ValidationResult.Status);
+            RedNewServices redServices = new RedNewServices(unitOfWork);
+            redServices.Remove(_red);
+            Assert.AreEqual(isCorrect, redServices.ValidationResult.Status);
         }
     }
 }
