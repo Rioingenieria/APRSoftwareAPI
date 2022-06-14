@@ -18,6 +18,7 @@ using RepositoryInterface.MatricesNew;
 using RepositoryInterface.PozosNew;
 using RepositoryInterface.RedesNew;
 using RepositoryInterface.EmplazamientosNew;
+using RepositoryInterface.ClientesNew;
 
 namespace UnitOfWorkInterface
 {
@@ -34,6 +35,7 @@ namespace UnitOfWorkInterface
         IPozoNewRepository PozoNewRepository { get; }
         IRedNewRepository RedNewRepository { get; }
         IEmplazamientoNewRepository EmplazamientoNewRepository { get; }
+        IClienteNewRepository ClienteNewRepository { get; }
         //IEgresoCategoriaRepository EgresoCategoriaRepository { get; }
         //IEgresoSubCategoriaRepository EgresoSubCategoriaRepository { get; }
         //ISucursalesRepository SucursalesRepository { get; }
