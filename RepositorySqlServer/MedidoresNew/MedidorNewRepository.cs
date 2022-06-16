@@ -115,35 +115,7 @@ namespace RepositorySqlServer.MedidoresNew
             using (var unMedidorNew = cmd.ExecuteReader())
             {
                 unMedidorNew.Read();
-                //_medidorNew = CreateEntity(unMedidorNew);
-                _medidorNew.IdMedidor = Convert.ToInt32(unMedidorNew["id_medidor"]);
-                _medidorNew.NumeroMedidor = unMedidorNew["numero_medidor"].ToString();
-                _medidorNew.InstalacionFecha = Convert.ToDateTime(unMedidorNew["instalacion_fecha"].ToString());
-                _medidorNew.InstalacionFechaVerdad = Convert.ToBoolean(unMedidorNew["instalacion_fecha_verdad"]);
-                _medidorNew.UnidadMedidorEstado = Convert.ToInt32(unMedidorNew["unidad_medidor_estado"]);
-                _medidorNew.Alcantarillado = Convert.ToBoolean(unMedidorNew["alcantarillado"]);
-                _medidorNew.IdSubsidio = Convert.ToInt32(unMedidorNew["id_subsidio"]);
-                _medidorNew.IdCliente = Convert.ToInt32(unMedidorNew["id_cliente"]);
-                _medidorNew.IdRed = Convert.ToInt32(unMedidorNew["id_red"]);
-                _medidorNew.Nicho = Convert.ToBoolean(unMedidorNew["nicho"]);
-                _medidorNew.DiametroEstado = Convert.ToInt32(unMedidorNew["diametro_estado"]);
-                _medidorNew.IdEmplazamiento = Convert.ToInt32(unMedidorNew["id_emplazamiento"]);
-                _medidorNew.SegundoHogar = Convert.ToInt32(unMedidorNew["segundo_hogar"]);
-                _medidorNew.EstadoClienteEstado = Convert.ToInt32(unMedidorNew["estado_cliente_estado"]);
-                _medidorNew.IdExencion = Convert.ToInt32(unMedidorNew["id_exencion"]);
-                _medidorNew.IdSector = Convert.ToInt32(unMedidorNew["id_sector"]);
-                _medidorNew.IdTarifa = Convert.ToInt32(unMedidorNew["id_tarifa"]);
-                _medidorNew.IdConfiguracionPeriodico = Convert.ToInt32(unMedidorNew["id_configuracion_periodico"]);
-                _medidorNew.IdDatoFacturacion = Convert.ToInt32(unMedidorNew["id_dato_facturacion"]);
-                _medidorNew.TipoMedidorEstado = Convert.ToInt32(unMedidorNew["tipo_medidor_estado"]);
-                _medidorNew.SincronizacionWeb = Convert.ToBoolean(unMedidorNew["sincronizacion_web"]);
-                _medidorNew.IdClienteGlobal = Convert.ToInt32(unMedidorNew["id_cliente_global"]);
-                _medidorNew.NumeroVivienda = Convert.ToInt32(unMedidorNew["numero_vivienda"]);
-                _medidorNew.Direccion = unMedidorNew["direccion"].ToString();
-                _medidorNew.IdConfiguracionFacturacion = Convert.ToInt32(unMedidorNew["id_configuracion_facturacion"]);
-                _medidorNew.FechaCreacion = Convert.ToDateTime(unMedidorNew["fecha_creacion"].ToString());
-                _medidorNew.IdUsuario = Convert.ToInt32(unMedidorNew["id_usuario"]);
-                _medidorNew.IsEliminado = Convert.ToBoolean(unMedidorNew["is_eliminado"]);
+                _medidorNew = CreateEntity(unMedidorNew);
             }
             return _medidorNew;
         }
