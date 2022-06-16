@@ -1,6 +1,7 @@
 using RepositoryInterface.ConfiguracionesGlobales;
 using RepositoryInterface.ConfiguracionesPeriodicosNew;
 ﻿using RepositoryInterface.ConfiguracionesFacturaciones;
+using RepositoryInterface.MedidoresNew;
 using RepositoryInterface.Usuarios;
 
 using System;
@@ -26,6 +27,7 @@ namespace UnitOfWorkInterface
     {
         IConfiguracionGlobalRepository ConfiguracionGlobalRepository { get; }
         IConfiguracionPeriodicoNewRepository ConfiguracionPeriodicoNewRepository { get; }
+        IMedidorNewRepository MedidorNewRepository { get; } 
         IProductoNewRepository ProductoNewRepository { get; }
         IProductoCategoriaNewRepository  ProductoCategoriaNewRepository { get; }
         IProveedorNewRepository  ProveedorNewRepository { get; }
