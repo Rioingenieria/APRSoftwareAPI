@@ -2,9 +2,11 @@ using Models.ConfiguracionesGlobales;
 using RepositoryInterface.ConfiguracionesFacturaciones;
 using RepositoryInterface.ConfiguracionesGlobales;
 using RepositoryInterface.ConfiguracionesPeriodicosNew;
+using RepositoryInterface.MedidoresNew;
 using RepositorySqlServer.ConfiguracionesFacturaciones;
 using RepositorySqlServer.ConfiguracionesGlobales;
 using RepositorySqlServer.ConfiguracionesPeriodicasNew;
+using RepositorySqlServer.MedidoresNew;
 using RepositoryInterface.Usuarios;
 using RepositorySqlServer.Usuarios;
 using System;
@@ -61,6 +63,7 @@ namespace UnitOfWorkSqlServer
         //public IRegistroRepository RegistroRepository { get; }
         //public IConfiguracionIndividualRepository ConfiguracionIndividualRepository { get; }
         public IConfiguracionFacturacionRepository ConfiguracionFacturacionRepository { get;} 
+        public IMedidorNewRepository MedidorNewRepository { get; set; }
         public IUsuarioRepository UsuarioRepository { get; }
         public IProductoNewRepository ProductoNewRepository { get; }
 
@@ -109,7 +112,8 @@ namespace UnitOfWorkSqlServer
             //ClienteOtroRepository = new ClienteOtroRepository(context, transaction);
             //RegistroRepository = new RegistroRepository(context, transaction);
             //ConfiguracionIndividualRepository = new ConfiguracionIndividualRepository(context, transaction);
-            ConfiguracionFacturacionRepository = new ConfiguracionFacturacionRepository(context, transaction);   
+            ConfiguracionFacturacionRepository = new ConfiguracionFacturacionRepository(context, transaction);
+            MedidorNewRepository = new MedidorNewRepository(context, transaction);
             UsuarioRepository = new UsuarioRepository(context, transaction);
         }
     }
