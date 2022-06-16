@@ -76,7 +76,7 @@ namespace UnitTest.MedidoresNew
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             MedidorNewServices medidorServices = new MedidorNewServices(unitOfWork);
             var resultado = medidorServices.GetById(medidorNew.IdMedidor);
-            Assert.AreEqual(resultado.IdMedidor, 1);
+            Assert.NotNull(resultado);
         }
 
         [Test, Order(3)]
@@ -101,7 +101,7 @@ namespace UnitTest.MedidoresNew
         [Test, Order(5)]
         public void IsExistTest()
         {
-            medidorNew.NumeroMedidor = "1111";
+            medidorNew.NumeroMedidor = "11111";
             UnitOfWorkSqlServer.UnitOfWorkSqlServer unitOfWork = new UnitOfWorkSqlServer.UnitOfWorkSqlServer();
             MedidorNewServices medidorServices = new MedidorNewServices(unitOfWork);
             var resultado = medidorServices.IsExistNumeroMedidorNew(medidorNew.NumeroMedidor);
