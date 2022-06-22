@@ -36,6 +36,8 @@ using RepositoryInterface.EmplazamientosNew;
 using RepositorySqlServer.EmplazamientosNew;
 using RepositoryInterface.ClientesNew;
 using RepositorySqlServer.ClientesNew;
+using RepositoryInterface.DatosSII;
+using RepositorySqlServer.DatosSII;
 
 namespace UnitOfWorkSqlServer
 {
@@ -97,6 +99,8 @@ namespace UnitOfWorkSqlServer
 
         public IClienteNewRepository ClienteNewRepository { get; }
 
+        public IDatoSiiRepository DatoSiiRepository { get; }
+
         public UnitOfWorkSqlServerRepository(SqlConnection context, SqlTransaction transaction)
         {
             ConfiguracionGlobalRepository = new ConfiguracionGlobalRepository(context, transaction);
@@ -111,6 +115,7 @@ namespace UnitOfWorkSqlServer
             RedNewRepository = new RedNewRepository(context, transaction);
             EmplazamientoNewRepository=new EmplazamientoNewRepository(context, transaction);
             ClienteNewRepository=new ClienteNewRepository(context, transaction);
+            DatoSiiRepository=new DatoSiiRepository(context, transaction);
             //EgresoCategoriaRepository = new EgresoCategoriaRepository(context, transaction);
             //EgresoSubCategoriaRepository = new EgresoSubCategoriaRepository(context, transaction);
             //SucursalesRepository = new SucursalesRepository(context, transaction);

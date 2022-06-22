@@ -20,6 +20,7 @@ using RepositoryInterface.PozosNew;
 using RepositoryInterface.RedesNew;
 using RepositoryInterface.EmplazamientosNew;
 using RepositoryInterface.ClientesNew;
+using RepositoryInterface.DatosSII;
 
 namespace UnitOfWorkInterface
 {
@@ -38,6 +39,7 @@ namespace UnitOfWorkInterface
         IRedNewRepository RedNewRepository { get; }
         IEmplazamientoNewRepository EmplazamientoNewRepository { get; }
         IClienteNewRepository ClienteNewRepository { get; }
+        IDatoSiiRepository DatoSiiRepository { get; }
         //IEgresoCategoriaRepository EgresoCategoriaRepository { get; }
         //IEgresoSubCategoriaRepository EgresoSubCategoriaRepository { get; }
         //ISucursalesRepository SucursalesRepository { get; }
