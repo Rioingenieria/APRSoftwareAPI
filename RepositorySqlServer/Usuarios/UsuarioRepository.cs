@@ -1,4 +1,5 @@
 ﻿using Common.Constantes;
+using Models.Response;
 using Models.Usuarios;
 using RepositoryInterface.Usuarios;
 using System;
@@ -186,6 +187,26 @@ namespace RepositorySqlServer.Usuarios
                                     "WHERE id_usuario = @id_usuario");
             cmd.Parameters.AddWithValue("@id_usuario", _usuario.IdUsuario);
             return cmd.ExecuteNonQuery();
+        }
+
+        public UsuarioResponse AuthUsuarioAPI(Usuario _usuario)
+        {
+            UsuarioResponse usuarioResponse = null;
+            var cmd = CreateCommand("select usuario,contraseña from usuarios where usuario=@usuario and contraseña=@contraseña");
+            cmd.Parameters.AddWithValue("@usuario", _usuario.NombreUsuario);
+            cmd.Parameters.AddWithValue("@contraseña", _usuario.Contraseña);
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                usuarioResponse = new UsuarioResponse() {
+                    UsuarioNombre= Convert.ToString(reader["usuario"]),
+                    Token=""                 
+             };
+
+
+            }
+            return usuarioResponse;
+
         }
     }
 }

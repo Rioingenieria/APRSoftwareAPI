@@ -268,5 +268,29 @@ namespace Services.Usuarios
             }
             return result;
         }
+        ///<summary>
+        ///Autoriza usuario ingreso API
+        ///</summary>
+        ///<return>
+        ///Devuelve un numero 1 si la eliminación fue exitosa, o un 0 si falló.
+        ///</return>
+        ///<param name="_usuario">
+        ///_usuario es el objeto de tipo Usuario con todos sus atributos para ser eliminado de la BBDD
+        ///</param>
+        ///
+        public int Auth(Usuario _usuario)
+        {
+            int result = 0;
+            try
+            {
+               
+            }
+            catch (Exception ex)
+            {
+                SalidaLogs.AgregarLog(ex);
+                ValidationResult.Status = StatusEnum.Error;
+            }
+            return result;
+        }
     }
 }

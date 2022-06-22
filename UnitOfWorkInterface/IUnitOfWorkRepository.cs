@@ -1,15 +1,8 @@
 using RepositoryInterface.ConfiguracionesGlobales;
 using RepositoryInterface.ConfiguracionesPeriodicosNew;
-﻿using RepositoryInterface.ConfiguracionesFacturaciones;
+using RepositoryInterface.ConfiguracionesFacturaciones;
 using RepositoryInterface.MedidoresNew;
 using RepositoryInterface.Usuarios;
-
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RepositoryInterface.ProductosNew;
 using RepositoryInterface.ProductosCategoriaNew;
 using RepositoryInterface.ProveedoresNew;

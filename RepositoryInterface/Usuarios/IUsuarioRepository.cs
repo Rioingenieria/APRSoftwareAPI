@@ -1,4 +1,5 @@
-﻿using Models.Usuarios;
+﻿using Models.Response;
+using Models.Usuarios;
 using RepositoryInterface.Actions;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,6 @@ namespace RepositoryInterface.Usuarios
     {
         List<Usuario> GetAllIdNombreApellido();
         Boolean IsExistNombreUsuario(string _nombre);
+        UsuarioResponse AuthUsuarioAPI(Usuario usuario);
     }
 }

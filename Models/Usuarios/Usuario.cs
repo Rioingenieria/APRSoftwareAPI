@@ -23,6 +23,7 @@ namespace Models.Usuarios
         private string _fotoUrl;
         private byte[]? _foto;
         private bool _isEliminado;
+        private string _token;
         public int IdUsuario
         {
             get { return _idUsuario; }
@@ -97,6 +98,11 @@ namespace Models.Usuarios
         {
             get { return _isEliminado; }
             set { _isEliminado = value; }
+        }
+        public string Token
+        {
+            get { return _token; }
+            set { _token = value; }
         }
     }
 }
