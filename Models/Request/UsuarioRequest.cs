@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace Models.Request
 {
-    public class AuthRequest
+    public class UsuarioRequest
     {
         [Required]
         public string UsuarioNombre { get; set; }
         [Required]
         public string Contrasena { get; set; }
+
     }
 }

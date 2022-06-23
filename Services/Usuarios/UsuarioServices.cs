@@ -1,21 +1,18 @@
 ﻿using Models;
 using Models.Common;
+using Models.Request;
+using Models.Response;
 using Models.Usuarios;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnitOfWorkInterface;
+using UnitOfWorkInterface.SSR;
 using static Models.Enum.Status;
 
 namespace Services.Usuarios
 {
     public class UsuarioServices
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWorkSSR _unitOfWork;
         public ValidationsFluent ValidationResult { get; }
-        public UsuarioServices(IUnitOfWork unitOfWork)
+        public UsuarioServices(IUnitOfWorkSSR unitOfWork)
         {
             _unitOfWork = unitOfWork;
             ValidationResult = new ValidationsFluent();
@@ -269,7 +266,7 @@ namespace Services.Usuarios
             return result;
         }
         ///<summary>
-        ///Autoriza usuario ingreso API
+        ///Autoriza ingreso usuario a API
         ///</summary>
         ///<return>
         ///Devuelve un numero 1 si la eliminación fue exitosa, o un 0 si falló.
@@ -278,12 +275,26 @@ namespace Services.Usuarios
         ///_usuario es el objeto de tipo Usuario con todos sus atributos para ser eliminado de la BBDD
         ///</param>
         ///
-        public int Auth(Usuario _usuario)
+        public UsuarioResponse Auth(UsuarioRequest _authRequest)
         {
-            int result = 0;
+            UsuarioResponse result = null;
             try
             {
-               
+                using (var context = _unitOfWork.Create())
+                {
+                    result = context.Repository.UsuarioRepository.AuthUsuarioAPI(_authRequest);
+                    context.SaveChange();
+                }
+                if (result == null)
+                {
+                    ValidationResult.Status = StatusEnum.Error;
+                    ValidationResult.Message = "Usuario o contraseña incorrectos.";
+                }
+                else
+                {
+                    ValidationResult.Status = StatusEnum.Ok;
+                }
+                
             }
             catch (Exception ex)
             {
