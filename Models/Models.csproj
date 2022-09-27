@@ -17,7 +17,6 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Common\" />
 		<Folder Include="ConfiguracionesFacturaciones\" />
 		<Folder Include="Enum\" />
 		<Folder Include="Usuarios\" />

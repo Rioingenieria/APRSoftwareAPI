@@ -1,4 +1,4 @@
-using RepositoryInterface.ConfiguracionesGlobales;
+﻿using RepositoryInterface.ConfiguracionesGlobales;
 using RepositoryInterface.ConfiguracionesPeriodicosNew;
 using RepositoryInterface.ConfiguracionesFacturaciones;
 using RepositoryInterface.MedidoresNew;
@@ -13,18 +13,17 @@ using RepositoryInterface.PozosNew;
 using RepositoryInterface.RedesNew;
 using RepositoryInterface.EmplazamientosNew;
 using RepositoryInterface.ClientesNew;
-using RepositoryInterface.DatosSII;
 
-namespace UnitOfWorkInterface
+namespace UnitOfWorkInterface.SSR
 {
-    public interface IUnitOfWorkRepository
+    public interface IUnitOfWorkSSRRepository
     {
         IConfiguracionGlobalRepository ConfiguracionGlobalRepository { get; }
         IConfiguracionPeriodicoNewRepository ConfiguracionPeriodicoNewRepository { get; }
-        IMedidorNewRepository MedidorNewRepository { get; } 
+        IMedidorNewRepository MedidorNewRepository { get; }
         IProductoNewRepository ProductoNewRepository { get; }
-        IProductoCategoriaNewRepository  ProductoCategoriaNewRepository { get; }
-        IProveedorNewRepository  ProveedorNewRepository { get; }
+        IProductoCategoriaNewRepository ProductoCategoriaNewRepository { get; }
+        IProveedorNewRepository ProveedorNewRepository { get; }
         IDatoFacturacionNewRepository DatoFacturacionNewRepository { get; }
         IProductoKitNewRepository ProductoKitNewRepository { get; }
         IMatrizNewRepository MatrizNewRepository { get; }
@@ -32,7 +31,6 @@ namespace UnitOfWorkInterface
         IRedNewRepository RedNewRepository { get; }
         IEmplazamientoNewRepository EmplazamientoNewRepository { get; }
         IClienteNewRepository ClienteNewRepository { get; }
-        IDatoSiiRepository DatoSiiRepository { get; }
         //IEgresoCategoriaRepository EgresoCategoriaRepository { get; }
         //IEgresoSubCategoriaRepository EgresoSubCategoriaRepository { get; }
         //ISucursalesRepository SucursalesRepository { get; }

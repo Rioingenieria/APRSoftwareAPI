@@ -1,10 +1,16 @@
 ﻿using Common.Constantes;
+using Common.Encriptacion;
+using Microsoft.IdentityModel.Tokens;
+using Models.Request;
+using Models.Response;
 using Models.Usuarios;
 using RepositoryInterface.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -186,6 +192,48 @@ namespace RepositorySqlServer.Usuarios
                                     "WHERE id_usuario = @id_usuario");
             cmd.Parameters.AddWithValue("@id_usuario", _usuario.IdUsuario);
             return cmd.ExecuteNonQuery();
+        }
+
+        public UsuarioResponse AuthUsuarioAPI(UsuarioRequest _authRequest)
+        {
+            UsuarioResponse usuarioResponse = null;
+            var cmd = CreateCommand("select usuario,contraseña from usuarios where usuario=@usuario and contraseña=@contraseña");
+            cmd.Parameters.AddWithValue("@usuario", _authRequest.UsuarioNombre);
+            cmd.Parameters.AddWithValue("@contraseña",Encriptacion.EncriptarSha256(_authRequest.Contrasena));
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                reader.Read();
+                if (reader.HasRows)
+                {
+                    usuarioResponse = new UsuarioResponse()
+                    {
+                        UsuarioNombre = Convert.ToString(reader["usuario"]),
+                        Token = GetToken(_authRequest)
+                    };                               
+             };
+            }
+            return usuarioResponse;
+        }
+        public string GetToken(UsuarioRequest _authRequest)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var llave = Encoding.ASCII.GetBytes( Claves.SecretoJwt);
+            var tokenDesciptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(
+                    new Claim[]
+                    {
+                        new Claim(ClaimTypes.NameIdentifier,_authRequest.UsuarioNombre)
+                    }
+                    ),
+                Expires=DateTime.UtcNow.AddDays(60),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(llave),SecurityAlgorithms.HmacSha256)
+
+            };
+
+            var token = tokenHandler.CreateToken(tokenDesciptor);
+            return tokenHandler.WriteToken(token);
         }
     }
 }
