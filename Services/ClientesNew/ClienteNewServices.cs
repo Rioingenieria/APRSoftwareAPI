@@ -8,14 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnitOfWorkInterface;
+using UnitOfWorkInterface.SSR;
 
 namespace Services.ClientesNew
 {
     public class ClienteNewServices
     {
-        private readonly IUnitOfWork _uniOfWork;
+        private readonly IUnitOfWorkSSR _uniOfWork;
         public ValidationsFluent ValidationResult { get; }
-        public ClienteNewServices(IUnitOfWork unitOfWork)
+        public ClienteNewServices(IUnitOfWorkSSR unitOfWork)
         {
             _uniOfWork = unitOfWork;
             ValidationResult = new ValidationsFluent();

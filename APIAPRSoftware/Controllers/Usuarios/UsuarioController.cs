@@ -7,7 +7,6 @@ namespace APIAPRSoftware.Controllers.Usuarios
 {
     [Route("api/usuario")]
     [ApiController]
-    [Authorize]
     public class UsuarioController:ControllerBase
     {
         UnitOfWorkSSRSqlServer UoW;
